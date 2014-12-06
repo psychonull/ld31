@@ -1,7 +1,10 @@
 
 var animations = require('../animations');
+var actions = require('../actions');
 
-module.exports = pac.Sprite.extend({
+var Character = require('./Character');
+
+module.exports = Character.extend({
 
   texture: 'familygirl',
 
@@ -10,11 +13,6 @@ module.exports = pac.Sprite.extend({
     autoplay: true
   }),
 
-  shape: true,
-
-  size: {
-    width: 100,
-    height: 100
-  }
+  actions: [ new actions.Walker({ velocity: 50 }) ],
 
 });

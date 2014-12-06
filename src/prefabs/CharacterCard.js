@@ -105,6 +105,8 @@ module.exports = pac.Sprite.extend({
   },
 
   update: function(dt){
+    this.mind = Math.min( Math.max(0, this.mind), 1);
+    this.body = Math.min( Math.max(0, this.body), 1);
     this.mindBar.size.width = this.mind * this.barWidth;
     this.bodyBar.size.width = this.body * this.barWidth;
   }

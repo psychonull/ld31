@@ -28,5 +28,10 @@ module.exports = function(){
       y: 400
     }
   });
+
+  this.familyCard = familyCard;
+  this.dudeCard = dudeCard;
+  this.granmaCard = granmaCard;
+
   this.addObject([familyCard, dudeCard, granmaCard]);
 };

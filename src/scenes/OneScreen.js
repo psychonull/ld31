@@ -3,8 +3,7 @@ var _ = pac._;
 
 var OneScreen = pac.Scene.extend({
 
-  size: { width: 320, height: 200 },
-  texture: '',
+  texture: 'back_building',
 
   init: function(options){
 

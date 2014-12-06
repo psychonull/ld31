@@ -7,20 +7,19 @@ pac.DEBUG = false;
 
 var ctn = window.document.getElementById('content');
 
+var gameSize = { width: 1067, height: 600 };
+
 var game = pac.create();
-var gameScale = ctn.clientHeight / 200;
+var gameScale = ctn.clientHeight / gameSize.height;
 
 game.use('loader', pac.Loader, require('./assets.js'));
 
 game.use('renderer', pac.PixiRenderer, {
   container: ctn,
-  backgroundColor: '#000000',
-  size: {
-    width: 320,
-    height: 200
-  },
-  layers: ['background', 'front', 'dialogue', 'gui'],
-  scale: gameScale
+  backgroundColor: '#00FF00',
+  size: gameSize,
+  scale: gameScale,
+  layers: ['background', 'objects', 'front', 'gui'],
 });
 
 game.use('input', pac.MouseInput, {

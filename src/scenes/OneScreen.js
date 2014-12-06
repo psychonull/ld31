@@ -14,28 +14,22 @@ var OneScreen = pac.Scene.extend({
   onEnter: function(scene){
 
     var x = 13;
-    var floorSize = { width: 908, height: 183 };
-    var debugColor = '#f2b5b5';
 
-    var floor1 = new pac.Rectangle({
-      position: new pac.Point(x, 406),
-      size: floorSize,
-      fill: debugColor
+    var floor1 = new (prefabs.FloorBack())({
+      name: 'floor1',
+      position: new pac.Point(x, 406)
     });
 
-    var floor2 = new pac.Rectangle({
-      position: new pac.Point(x, 206),
-      size: floorSize,
-      fill: debugColor
+    var floor2 = new (prefabs.FloorBack())({
+      name: 'floor2',
+      position: new pac.Point(x, 206)
     });
 
-    var floor3 = new pac.Rectangle({
-      position: new pac.Point(x, 11),
-      size: floorSize,
-      fill: debugColor
+    var floor3 = new (prefabs.FloorBack())({
+      name: 'floor3',
+      position: new pac.Point(x, 11)
     });
 
-    // for debug
     this.addObject([ floor1, floor2, floor3 ]);
 
     require('./Floor1')(floor1, this);

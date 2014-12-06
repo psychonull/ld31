@@ -5,9 +5,13 @@ module.exports = function(bounds, scene){
 
   var floor = bounds.getFeet();
 
-  var boy = new prefabs.FamilyBoy();
-  var girl = new prefabs.FamilyGirl();
-  girl.floor = boy.floor = 3;
+  var boy = new prefabs.FamilyBoy({
+    floor: 3
+  });
+
+  var girl = new prefabs.FamilyGirl({
+    floor: 3
+  });
 
   var pos = boy.shape.getBounds().getFeet();
 

@@ -1,6 +1,15 @@
 
 var fonts = {
-
+  'lucas': {
+    texture: 'assets/fonts/lucas/lucas.png',
+    definition: 'assets/fonts/lucas/font.json',
+    type: 'bitmapFont'
+  },
+  'lucaswhite': {
+    texture: 'assets/fonts/lucaswhite/lucaswhite.png',
+    definition: 'assets/fonts/lucaswhite/font.json',
+    type: 'bitmapFont'
+  }
 };
 
 var textures = {
@@ -25,6 +34,11 @@ var textures = {
     path: 'assets/img/chars/familygirl.png',
     atlas: 'assets/img/chars/familyperson.json'
   },
+
+  'characterCard': {
+    path: 'assets/img/characterCards.png',
+    atlas: 'assets/img/characterCards.json'
+  }
 };
 
 module.exports = pac._.merge(fonts, textures);

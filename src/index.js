@@ -41,7 +41,7 @@ game.loader.on('complete', function(){
   });
 });
 
-game.on('ready', createGameObjects);
+game.on('ready', require('./createGameObjects.js'));
 
 if (pac.DEBUG){
   window.addEventListener('load', function(){
@@ -54,7 +54,3 @@ game.loader.load();
 
 // hack for develop
 window.game = game;
-
-function createGameObjects(){
-
-}

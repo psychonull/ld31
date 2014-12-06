@@ -1,6 +1,7 @@
-var pac = require('../../pac/src/'),
-  Loading = require('./Loading.js'),
+var Loading = require('./Loading.js'),
   scenes = require('./scenes');
+
+window.pac = require('../../pac/src/');
 
 window.document.title += ' [pac  v' + pac.VERSION + ']';
 pac.DEBUG = false;

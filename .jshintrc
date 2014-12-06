@@ -35,6 +35,7 @@
     "beforeEach": true,
     "describe": true,
     "it": true,
-    "mocha": true
+    "mocha": true,
+    "pac": true
   }
 }

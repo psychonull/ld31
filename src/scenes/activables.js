@@ -23,6 +23,17 @@ module.exports = {
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
+    },
+
+    bed: {
+      command: {
+        env: { tv: 0.1 },
+        state: { mind: 0.02, body: 0.05 },
+        animation: 'bedOn',
+        duration: 120, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
     }
 
   }

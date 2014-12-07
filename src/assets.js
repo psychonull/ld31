@@ -55,6 +55,10 @@ var textures = {
   'granma_tv': {
     path: 'assets/img/granma/granma_tv.png',
     atlas: 'assets/img/granma/granma_tv.json'
+  },
+  'granma_bed': {
+    path: 'assets/img/granma/granma_bed.png',
+    atlas: 'assets/img/granma/granma_bed.json'
   }
 
 };

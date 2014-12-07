@@ -6,6 +6,8 @@ module.exports = pac.Action.extend({
   init: function(options) {
     this.velocity = (options && options.velocity) || 10;
     this.feet = (options && options.feet) || null;
+
+    this.doOnNextTick = false;
   },
 
   onStart: function() {
@@ -16,10 +18,12 @@ module.exports = pac.Action.extend({
       min: this.floor.position.x,
       max: this.floor.position.x + this.floor.size.width
     };
+
+    this.floor.walkers.add(obj);
   },
 
   onEnd: function() {
-
+    this.floor.walkers.remove(this.actions.owner);
   },
 
   _getTarget: function(){
@@ -36,7 +40,7 @@ module.exports = pac.Action.extend({
       target.x = this.bounds.max - w;
     }
 
-    if (target.x - w < this.bounds.min){
+    if (target.x < this.bounds.min){
       target.x = this.bounds.min;
     }
 
@@ -47,6 +51,12 @@ module.exports = pac.Action.extend({
 
     if (this.floor.isClicked){
       this.actions.owner.actions.removeAll(pac.actions.WalkTo);
+      this.doOnNextTick = true;
+      return;
+    }
+
+    if (this.doOnNextTick){
+      this.doOnNextTick = false;
 
       this.insertBehindMe(new pac.actions.WalkTo({
         velocity: this.velocity,

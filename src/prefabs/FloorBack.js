@@ -11,7 +11,11 @@ module.exports = function(){
     shape: new pac.Rectangle({ size: pac._.clone(floorSize) }),
     size: pac._.clone(floorSize),
 
-    actions: [ new pac.actions.Clickable() ]
+    actions: [ new pac.actions.Clickable() ],
+
+    init: function(options){
+      this.walkers = new pac.List();
+    }
 
   });
 

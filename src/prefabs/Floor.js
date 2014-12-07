@@ -13,12 +13,14 @@ module.exports = function(){
 
     actions: [ new pac.actions.Clickable() ],
 
-    start: { mind: 1, body: 1 },
+    start: null,
+    env: null,
     floor: 0,
 
     init: function(options){
       this.walkers = new pac.List();
       this.stats = (options && options.stats) || this.stats;
+      this.env = (options && options.env) || this.env;
       this.floor = (options && options.floor) || this.floor;
     },
 

@@ -5,8 +5,9 @@ module.exports = pac.Action.extend({
 
   name: 'WalkerCommand',
 
-  init: function(walker) {
+  init: function(walker, command) {
     this.walker = walker;
+    this.command = command;
   },
 
   onStart: function() { },
@@ -16,7 +17,7 @@ module.exports = pac.Action.extend({
   update: function(dt) {
 
     if (this.walker.targetReached){
-      this.insertBehindMe(new Command());
+      this.insertBehindMe(new Command(this.command));
     }
 
     if (!this.walker.walkingTo){

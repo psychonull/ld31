@@ -24,21 +24,11 @@ module.exports = pac.Action.extend({
       obj.stats.mind += this.lose.mind;
       obj.stats.body += this.lose.body;
 
-      if (obj.stats.mind > 1) {
-        obj.stats.mind = 1;
-      }
+      obj.stats.mind = obj.stats.mind > 1 ? 1 : obj.stats.mind;
+      obj.stats.mind = obj.stats.mind < 0 ? 0 : obj.stats.mind;
 
-      if (obj.stats.body > 1) {
-        obj.stats.body = 1;
-      }
-
-      if (obj.stats.mind < 0) {
-        obj.stats.mind = 0;
-      }
-
-      if (obj.stats.body < 0) {
-        obj.stats.body = 0;
-      }
+      obj.stats.body = obj.stats.body > 1 ? 1 : obj.stats.body;
+      obj.stats.body = obj.stats.body < 0 ? 0 : obj.stats.body;
 
       this.elapsed = 0;
     }

@@ -38,7 +38,12 @@ var textures = {
   'characterCard': {
     path: 'assets/img/characterCards.png',
     atlas: 'assets/img/characterCards.json'
-  }
+  },
+
+  'some_object': {
+    path: 'assets/img/chars/grandma.png',
+    atlas: 'assets/img/chars/grandma.json'
+  },
 };
 
 module.exports = pac._.merge(fonts, textures);

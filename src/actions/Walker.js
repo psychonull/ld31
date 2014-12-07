@@ -11,26 +11,47 @@ module.exports = pac.Action.extend({
   onStart: function() {
     var obj = this.actions.owner;
     this.floor = obj.game.findOne('floor' + obj.floor);
+
+    this.bounds = {
+      min: this.floor.position.x,
+      max: this.floor.position.x + this.floor.size.width
+    };
   },
 
   onEnd: function() {
 
   },
 
+  _getTarget: function(){
+    var obj = this.actions.owner;
+    var pos = obj.game.inputs.cursor.position;
+
+    var target = new pac.Point(pos.x, obj.position.y);
+    var w = obj.shape.size.width;
+    var halfWidth = w/2;
+
+    target.x -= halfWidth;
+
+    if (target.x + w > this.bounds.max){
+      target.x = this.bounds.max - w;
+    }
+
+    if (target.x - w < this.bounds.min){
+      target.x = this.bounds.min;
+    }
+
+    return target;
+  },
+
   update: function(dt) {
 
     if (this.floor.isClicked){
+      this.actions.owner.actions.removeAll(pac.actions.WalkTo);
 
-      var obj = this.actions.owner;
-      var pos = obj.game.inputs.cursor.position;
-
-      obj.actions
-        .removeAll(pac.actions.WalkTo)
-        .pushFront(new pac.actions.WalkTo({
-          velocity: this.velocity,
-          target: new pac.Point(pos.x, obj.position.y)
-        }));
-
+      this.insertBehindMe(new pac.actions.WalkTo({
+        velocity: this.velocity,
+        target: this._getTarget()
+      }));
     }
 
   }

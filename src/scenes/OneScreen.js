@@ -4,18 +4,20 @@ var _ = pac._;
 var prefabs = require('../prefabs');
 var actions = require('../actions');
 
+var div = 1000;
+
 var stats = {
   floor1: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -0.03, body: -0.015 }
+    lose: { mind: -3/div, body: -1.5/div }
   },
   floor2: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -0.015, body: -0.03 }
+    lose: { mind: -1.5/div, body: -3/div }
   },
   floor3: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -0.045, body: -0.015 }
+    lose: { mind: -4.5/div, body: -1.5/div }
   },
   loseTime: 5 //seconds
 };

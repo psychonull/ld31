@@ -143,7 +143,11 @@ module.exports = pac.Sprite.extend({
       popUpCont.createModal(new pac.Point(this.position.x, this.position.y), { 
         title:'test', 
         content:'test content', 
-        footer:'test footer'
+        footer:'test footer',
+        size: {
+          width: 400,
+          height: 200
+        }
       });
 
       popUpCont.on('click', function(){

@@ -6,23 +6,19 @@ module.exports = pac.Rectangle.extend({
     height: 200
   },
   fill: '#4f4f4f',
-  title: 'N/A',
   content: 'Content',
-  footer: 'Footer',
 
   init: function(options){
     /*jshint maxcomplexity: 10*/
     this.layer = (options && options.layer) || this.layer;
-    this.title = (options && options.title) || this.title;
     this.content = (options && options.content) || this.content;
-    this.footer = (options && options.footer) || this.footer;
     this.position.x = options.position.x - this.size.width;
     this.position.y = options.position.y;
 
 
-    if(!options.titleOject){
-      this.titleOject = new pac.Text({
-        value: this.title,
+    if(!options.titleObject && options.title){
+      options.titleObject = new pac.Text({
+        value: options.title,
         font: '20px lucaswhite',
         isBitmapText: true,
         wordWrap: 380,
@@ -33,22 +29,33 @@ module.exports = pac.Rectangle.extend({
       });
     }
 
-    if(!options.contentOject){
-        this.contentOject = new pac.Text({
-          value: this.content,
-          font: '12px lucaswhite',
-          isBitmapText: true,
-          wordWrap: 380,
-          position: {
-            x: 10,
-            y: 50
-          }
-        });
+    if(!options.contentObject){
+      options.contentObject = [new pac.Text({
+        value: this.content,
+        font: '12px lucaswhite',
+        isBitmapText: true,
+        wordWrap: 380,
+        position: {
+          x: 10,
+          y: 50
+        }
+      }),
+      new pac.Text({
+        value: 'ArrayTest',
+        font: '12px lucaswhite',
+        isBitmapText: true,
+        wordWrap: 380,
+        position: {
+          x: 10,
+          y: 70
+        }
+      })
+      ];
     }
 
-    if(!options.contentFooter){
-        this.contentFooter = new pac.Text({
-          value: this.footer,
+    if(!options.contentFooter && options.footer){
+        options.contentFooter = new pac.Text({
+          value: options.footer,
           font: '6px lucaswhite',
           isBitmapText: true,
           wordWrap: 380,
@@ -59,9 +66,13 @@ module.exports = pac.Rectangle.extend({
         });
     }
 
-    this.children.add(this.titleOject);
-    this.children.add(this.contentOject);
-    this.children.add(this.contentFooter);
+    if(options.titleObject)
+      this.children.add(options.titleObject);
+    
+    this.children.add(options.contentObject);
+
+    if(options.contentFooter)
+      this.children.add(options.contentFooter);
   },
 
   update: function(){

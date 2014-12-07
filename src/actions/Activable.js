@@ -5,12 +5,13 @@ var Command = require('./Command');
 
 module.exports = pac.Action.extend({
 
-  name: 'WalkableObject',
+  name: 'Activable',
 
   requires: [ pac.actions.Hoverable, pac.actions.Clickable ],
 
   init: function(options) {
     this.nearness = (options && options.nearness) || 10;
+    this.command = pac._.clone(options.command || {}, true);
   },
 
   onStart: function() {
@@ -34,7 +35,7 @@ module.exports = pac.Action.extend({
       myPos.y = this.walker.position.y;
 
       if (myPos.subtract(this.walker.position).length() <= this.nearness){
-        this.actions.pushFront(new Command());
+        this.actions.pushFront(new Command(this.command));
         return;
       }
 
@@ -68,7 +69,7 @@ module.exports = pac.Action.extend({
           nearness: this.nearness
         }), found);
 
-      this.actions.pushFront(new WalkerCommand(this.walker));
+      this.actions.pushFront(new WalkerCommand(this.walker, this.command));
     }
   }
 

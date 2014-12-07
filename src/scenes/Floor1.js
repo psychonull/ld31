@@ -35,12 +35,30 @@ module.exports = function(floor, scene){
   });
 
   var obj = new DummyObject({
+    name: 'Little GrandMa',
     position: floor.position.add(new pac.Point(100, 30)),
     frame: 'idle1',
     texture: 'some_object',
-    actions: [ new actions.WalkableObject({ nearness: 50 }) ]
+    actions: [ new actions.Activable({
+      command: {
+        env: { music: 0.1, tv: 0.1 },
+        state: { mind: -0.01, body: 0.05 },
+        //animation: 'test',
+        duration: 2, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
+    }) ]
   });
 
   scene.addObject(obj);
+
+  floor.onActivateObject = function(obj){
+    console.log('onActivateObject > ' + obj.name);
+  };
+
+  floor.onDeactivateObject = function(obj){
+    console.log('onDeactivateObject > ' + obj.name);
+  };
 
 };

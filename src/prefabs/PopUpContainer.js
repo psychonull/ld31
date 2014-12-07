@@ -20,13 +20,18 @@ module.exports = pac.Rectangle.extend({
         layer:'modals',
         zIndex: 1000,
         title: options.title, 
-        content: options.content, 
-        footer: options.footer,
+        content: options.content,
+        contentObject: options.contentObject,
+        footer: options.footer, 
+        size: {
+          width: options.size.width,
+          height: options.size.height
+        },
         actions: [new pac.actions.Clickable()],
         shape: new pac.Rectangle({ 
           size: {
-          width: 400,
-          height: 200
+          width: options.size.width,
+          height: options.size.height
         } }),
         position: pos
       });

@@ -53,6 +53,26 @@ module.exports = function(floor, scene){
 
   scene.addObject(obj);
 
+
+  var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
+    position: new pac.Point(200, 30),
+    frame: 'idle1',
+    texture: 'some_object',
+    actions: [new pac.actions.Clickable()],
+    shape: new pac.Rectangle({
+          size: {
+          width: 100,
+          height: 100
+        } }),
+    size: {
+      width: 100,
+      height: 100
+    },
+    floor: 1
+  });
+
+  scene.addObject(MenuObject);
+
   floor.onActivateObject = function(obj){
     console.log('onActivateObject > ' + obj.name);
   };
@@ -60,5 +80,4 @@ module.exports = function(floor, scene){
   floor.onDeactivateObject = function(obj){
     console.log('onDeactivateObject > ' + obj.name);
   };
-
 };

@@ -4,22 +4,49 @@ var _ = pac._;
 var prefabs = require('../prefabs');
 var actions = require('../actions');
 
-var div = 1000;
+function v(mind, body){
+  return { mind: mind/1000, body: body/1000 };
+}
 
 var stats = {
   floor1: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -3/div, body: -1.5/div }
+    living: v(-3, -1.5),
+
+    env: {
+      tv: v(0, -1.5),
+      babyCry: v(-3, -1.5),
+      cook: v(-3, -1.5),
+      videogame: v(-3, -1.5),
+      music: v(-2, 0),
+    }
   },
   floor2: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -1.5/div, body: -3/div }
+    living: v(-1.5, -3),
+
+    env: {
+      tv: v(-3, -1.5),
+      babyCry: v(-3, -1.5),
+      cook: v(-3, -1.5),
+      videogame: v(-3, -1.5),
+      music: v(-3, 1.5),
+    }
   },
   floor3: {
     start: { mind: 1, body: 1 },
-    lose: { mind: -4.5/div, body: -1.5/div }
+    living: v(-4.5, -1.5),
+
+    env: {
+      tv: v(-3, -1.5),
+      babyCry: v(-3, -1.5),
+      cook: v(-3, -1.5),
+      videogame: v(-3, -1.5),
+      music: v(-3, -1.5),
+    }
   },
-  loseTime: 5 //seconds
+
+  livingTime: 0.1 //seconds
 };
 
 var OneScreen = pac.Scene.extend({
@@ -38,6 +65,7 @@ var OneScreen = pac.Scene.extend({
       floor: 1,
       name: 'floor1',
       stats: stats.floor1.start,
+      env: stats.floor1.env,
       position: new pac.Point(x, 407),
     });
 
@@ -45,6 +73,7 @@ var OneScreen = pac.Scene.extend({
       floor: 2,
       name: 'floor2',
       stats: stats.floor2.start,
+      env: stats.floor2.env,
       position: new pac.Point(x, 208)
     });
 
@@ -52,6 +81,7 @@ var OneScreen = pac.Scene.extend({
       floor: 3,
       name: 'floor3',
       stats: stats.floor3.start,
+      env: stats.floor3.env,
       position: new pac.Point(x, 12)
     });
 
@@ -62,13 +92,13 @@ var OneScreen = pac.Scene.extend({
     require('./Floor3')(floor3, this);
 
     floor1.actions.pushFront(
-      new actions.Living(stats.floor1.lose, stats.loseTime, 1));
+      new actions.Living(stats.floor1.living, stats.livingTime));
 
     floor2.actions.pushFront(
-      new actions.Living(stats.floor2.lose, stats.loseTime, 1));
+      new actions.Living(stats.floor2.living, stats.livingTime));
 
     floor3.actions.pushFront(
-      new actions.Living(stats.floor3.lose, stats.loseTime, 1));
+      new actions.Living(stats.floor3.living, stats.livingTime));
   },
 
   onExit: function(scene){

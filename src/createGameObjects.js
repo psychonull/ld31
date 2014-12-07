@@ -34,4 +34,13 @@ module.exports = function(){
   this.granmaCard = granmaCard;
 
   this.addObject([familyCard, dudeCard, granmaCard]);
+
+  this.env = {
+    tv: 0,
+    babyCry: 0,
+    cook: 0,
+    videogame: 0,
+    music: 0
+  };
+
 };

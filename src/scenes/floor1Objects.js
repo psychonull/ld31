@@ -33,6 +33,26 @@ module.exports = function(floor) {
 
     actions: [ new actions.Activable(activables.tv) ]
 
+  }, {
+
+    name: 'Old Bed',
+    position: floor.position.add(new pac.Point(273, 74)),
+    size: {
+      width: 111,
+      height: 108
+    },
+    frame: 'cama',
+    texture: 'granma_bed',
+
+    frameHover: 'cama_hover',
+
+    animations: new pac.AnimationList(animations.bed, {
+      default: 'bedOff',
+      autoplay: false
+    }),
+
+    actions: [ new actions.Activable(activables.bed) ]
+
   }];
 
 

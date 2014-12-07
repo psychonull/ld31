@@ -1,6 +1,7 @@
 
 module.exports = {
 
-  tv: require('./tv')
+  tv: require('./tv'),
+  bed: require('./bed')
 
 };

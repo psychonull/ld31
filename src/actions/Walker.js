@@ -50,7 +50,7 @@ module.exports = pac.Action.extend({
   update: function(dt) {
 
     if (this.floor.isClicked){
-      this.actions.owner.actions.removeAll(pac.actions.WalkTo);
+      this.actions.removeAll(pac.actions.WalkTo);
       this.doOnNextTick = true;
       return;
     }

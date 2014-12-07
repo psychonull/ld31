@@ -5,9 +5,10 @@ module.exports = pac.Action.extend({
 
   name: 'WalkerCommand',
 
-  init: function(walker, command) {
+  init: function(walker, command, isTurnOff) {
     this.walker = walker;
     this.command = command;
+    this.isTurnOff = isTurnOff;
   },
 
   onStart: function() { },
@@ -17,7 +18,12 @@ module.exports = pac.Action.extend({
   update: function(dt) {
 
     if (this.walker.targetReached){
-      this.insertBehindMe(new Command(this.command));
+      if (this.isTurnOff){
+        this.actions.removeAll(Command);
+      }
+      else {
+        this.insertBehindMe(new Command(this.command));
+      }
     }
 
     if (!this.walker.walkingTo){

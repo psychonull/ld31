@@ -22,12 +22,16 @@ module.exports = pac.Sprite.extend({
       'walkLeft': 'walkLeft',
       'walkRight': 'walkRight'
     });
+
+    this.wasWalking = false;
+    this.doOnNextTick = false;
   },
 
   update: function(dt){
 
 
     if (this.walkingTo){
+      this.wasWalking = true;
 
       if (this.walkingTo.x >= 0){
         this.animations.play(this.walkAnim.walkRight);
@@ -39,8 +43,12 @@ module.exports = pac.Sprite.extend({
       }
 
     }
-    else {
+    else if (this.wasWalking && this.doOnNextTick){
+      this.doOnNextTick = false;
       this.animations.play(this.walkAnim['idle' + this.lastSide]);
+    }
+    else {
+      this.doOnNextTick = true;
     }
 
   },

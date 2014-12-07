@@ -77,7 +77,7 @@ module.exports = function(stats, livingTime){
       }
 
       return null;
-    }
+    },
 
   });
 

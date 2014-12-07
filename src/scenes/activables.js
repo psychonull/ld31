@@ -1,0 +1,19 @@
+
+module.exports = {
+
+  floor1: {
+
+    littleNana: {
+      command: {
+        env: { music: 0.1, tv: 0.1 },
+        state: { mind: -0.01, body: 0.05 },
+        //animation: 'test',
+        duration: 2, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
+    }
+
+  }
+
+};

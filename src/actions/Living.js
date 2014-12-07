@@ -26,8 +26,8 @@ module.exports = pac.Action.extend({
       var gameEnv = obj.game.env;
 
       pac._.forIn(obj.env, function(value, key){
-        obj.stats.mind += value.mind * gameEnv[key];
-        obj.stats.body += value.body * gameEnv[key];
+        obj.stats.mind += value.mind * (gameEnv[key] || 0);
+        obj.stats.body += value.body * (gameEnv[key] || 0);
       });
 
       obj.stats.mind = obj.stats.mind > 1 ? 1 : obj.stats.mind;

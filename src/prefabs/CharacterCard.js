@@ -140,7 +140,8 @@ module.exports = pac.Sprite.extend({
         } }),
       });
       this.game.addObject(popUpCont);
-      popUpCont.createModal(new pac.Point(this.position.x, this.position.y), { 
+      popUpCont.createModal(new pac.Point(this.position.x, this.position.y), {
+        orientation: 'left',
         title:'test', 
         content:'test content', 
         footer:'test footer',

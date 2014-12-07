@@ -9,15 +9,15 @@ var FamilyBoy = module.exports = Character.extend({
   texture: 'familyboy',
 
   animations: new pac.AnimationList(animations.FamilyBoy, {
-    default: 'idleBoy',
+    default: 'idleLeftBoy',
     autoplay: true
   }),
 
   actions: [ new actions.Walker({ velocity: 50 }) ],
 
   walkAnim: {
-    'idleLeft': 'idleBoy',
-    'idleRight': 'idleBoy',
+    'idleLeft': 'idleLeftBoy',
+    'idleRight': 'idleRightBoy',
     'walkLeft': 'walkLeftBoy',
     'walkRight': 'walkRightBoy'
   },

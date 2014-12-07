@@ -40,10 +40,15 @@ var textures = {
     atlas: 'assets/img/characterCards.json'
   },
 
+
+  'infoIcon': {
+    path: 'assets/img/info_icon.png'
+  },
+  
   'some_object': {
     path: 'assets/img/chars/grandma.png',
     atlas: 'assets/img/chars/grandma.json'
-  },
+  }
 };
 
 module.exports = pac._.merge(fonts, textures);

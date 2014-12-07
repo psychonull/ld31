@@ -4,33 +4,28 @@ var actions = require('../actions');
 
 var Character = require('./Character');
 
-module.exports = Character.extend({
+var FamilyBoy = module.exports = Character.extend({
 
   texture: 'familyboy',
 
   animations: new pac.AnimationList(animations.FamilyBoy, {
-    default: 'idle',
+    default: 'idleBoy',
     autoplay: true
   }),
 
   actions: [ new actions.Walker({ velocity: 50 }) ],
 
+  walkAnim: {
+    'idleLeft': 'idleBoy',
+    'idleRight': 'idleBoy',
+    'walkLeft': 'walkLeftBoy',
+    'walkRight': 'walkRightBoy'
+  },
+
   update: function(dt){
+    FamilyBoy.__super__.update.apply(this, arguments);
 
-    if (this.walkingTo){
-
-      if (this.walkingTo.x >= 0){
-        this.animations.play('walkRightBoy');
-      }
-      else {
-        this.animations.play('walkLeftBoy');
-      }
-
-    }
-    else {
-      this.animations.play('idleBoy');
-    }
-
+    
   },
 
 });

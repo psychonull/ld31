@@ -27,12 +27,12 @@ var textures = {
 
   'familyboy': {
     path: 'assets/img/chars/familyboy.png',
-    atlas: 'assets/img/chars/familyperson.json'
+    atlas: 'assets/img/chars/familyboy.json'
   },
 
   'familygirl': {
     path: 'assets/img/chars/familygirl.png',
-    atlas: 'assets/img/chars/familyperson.json'
+    atlas: 'assets/img/chars/familygirl.json'
   },
 
   'characterCard': {

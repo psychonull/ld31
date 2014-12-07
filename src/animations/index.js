@@ -3,6 +3,7 @@ module.exports = {
 
   GrandMa: require('./GrandMa'),
   Dude: require('./Dude'),
-  FamilyPerson: require('./FamilyPerson'),
+  FamilyBoy: require('./FamilyBoy'),
+  FamilyGirl: require('./FamilyGirl'),
 
 };

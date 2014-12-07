@@ -4,7 +4,7 @@ var Loading = require('./Loading.js'),
 window.pac = require('../../pac/src/');
 
 window.document.title += ' [pac  v' + pac.VERSION + ']';
-pac.DEBUG = true;
+pac.DEBUG = false;
 
 var ctn = window.document.getElementById('content');
 

@@ -54,7 +54,8 @@ module.exports = function(floor, scene){
   scene.addObject(obj);
 
 
-    var MenuObject = new DummyObject({
+    /*var MenuObject = new DummyObject({
+      name: 'GrandMa 2',
       position: floor.position.add(new pac.Point(200, 30)),
       frame: 'idle1',
       texture: 'some_object',
@@ -65,12 +66,10 @@ module.exports = function(floor, scene){
           width: 100,
           height: 100
         },
-        floor: 2
         })
       ]
     });
-
-  scene.addObject(MenuObject);
+  scene.addObject(MenuObject);*/
 
   floor.onActivateObject = function(obj){
     console.log('onActivateObject > ' + obj.name);

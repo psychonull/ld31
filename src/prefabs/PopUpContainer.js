@@ -34,6 +34,34 @@ module.exports = pac.Rectangle.extend({
           width: options.size.width,
           height: options.size.height
         } }),
+        position: pos,
+        visibe: false
+      });
+    
+    this.game.addObject(this.popUpControl);
+  },
+
+createModalMenu: function(pos, options){
+    this.popUpControl = new popUp({
+        orientation: options.orientation,
+        layer:'modals',
+        zIndex: 1000,
+        title: options.title, 
+        content: options.content,
+        contentObject: options.contentObject,
+        footer: options.footer, 
+        size: {
+          width: options.size.width,
+          height: options.size.height
+        },
+        /*
+        actions: [new pac.actions.Clickable()],
+        shape: new pac.Rectangle({ 
+          size: {
+          width: options.size.width,
+          height: options.size.height
+        } }),
+*/
         position: pos
       });
     

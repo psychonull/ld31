@@ -53,6 +53,26 @@ module.exports = function(floor) {
 
     actions: [ new actions.Activable(activables.bed) ]
 
+  }, {
+
+    name: 'Old kitchen',
+    position: floor.position.add(new pac.Point(848, 79)),
+    size: {
+      width: 57,
+      height: 105
+    },
+    frame: 'cocina',
+    texture: 'granma_kitchen',
+
+    frameHover: 'cocina_hover',
+
+    animations: new pac.AnimationList(animations.kitchen, {
+      default: 'kitchenOff',
+      autoplay: false
+    }),
+
+    actions: [ new actions.Activable(activables.kitchen) ]
+
   }];
 
 

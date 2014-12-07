@@ -9,15 +9,15 @@ var Dude = module.exports = Character.extend({
   texture: 'dude',
 
   animations: new pac.AnimationList(animations.Dude, {
-    default: 'idle',
+    default: 'idleLeft',
     autoplay: true
   }),
 
   actions: [ new actions.Walker({ velocity: 50 }) ],
 
   walkAnim: {
-    'idleLeft': 'idle',
-    'idleRight': 'idle',
+    'idleLeft': 'idleLeft',
+    'idleRight': 'idleRight',
     'walkLeft': 'walkLeft',
     'walkRight': 'walkRight'
   },

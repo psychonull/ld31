@@ -60,7 +60,23 @@ module.exports = function(floor, scene){
     floor: 1
   });*/
 
-    var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
+    var MenuObject = new DummyObject({
+      position: floor.position.add(new pac.Point(200, 30)),
+      frame: 'idle1',
+      texture: 'some_object',
+      actions: [ new actions.MenuCommander({
+        menuOptions: [{text: 'funciona'}, {text: 'bien'}],
+        position: floor.position.add(new pac.Point(200, 30)),
+        size: {
+          width: 100,
+          height: 100
+        },
+        floor: 2
+        })
+      ]
+    });
+
+    /*var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
     position: new pac.Point(200, 30),
     frame: 'idle1',
     texture: 'some_object',
@@ -75,7 +91,7 @@ module.exports = function(floor, scene){
       height: 100
     },
     floor: 1
-  });
+  });*/
 
   /*var objMenu = new DummyObject({
     position: floor.position.add(new pac.Point(200, 30)),

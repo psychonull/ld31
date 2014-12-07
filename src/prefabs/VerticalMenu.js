@@ -1,6 +1,6 @@
 
 var popUpContainer = require('./PopUpContainer.js');
-module.exports = pac.Sprite.extend({
+module.exports = pac.Rectangle.extend({
   layer: 'gui',
   size: {
     width: 100,
@@ -8,9 +8,10 @@ module.exports = pac.Sprite.extend({
   },
 
   init: function(options){    
-    this
-    .on('click', function(){
-      var popUpCont = new popUpContainer({
+  },
+
+  createMenu: function(options){
+    var popUpCont = new popUpContainer({
         zIndex: 1,
         layer:'modals',
        
@@ -20,23 +21,22 @@ module.exports = pac.Sprite.extend({
           width: 1067,
           height: 600
         } }),
-      });
-      this.game.addObject(popUpCont);
-      popUpCont.createModal(new pac.Point(options.position.x + (options.size.width * 3/2), options.position.y + options.size.height/2), { 
-        contentObject: this.createMenuContent(options.menuOptions),
-        size: {
-          width: options.size.width,
-          height: options.size.height
-        }
-      });
+    });
+    this.game.addObject(popUpCont);
+    popUpCont.createModal(new pac.Point(options.position.x , options.position.y), { 
+      contentObject: this.createMenuContent(options.menuOptions),
+      size: {
+        width: options.size.width,
+        height: options.size.height
+      }
+    });
 
-      popUpCont.on('click', function(){
-        this.game
-          .removeObject(popUpCont.popUpControl)
-          .removeObject(popUpCont);
+    popUpCont.on('click', function(){
+      this.game
+        .removeObject(popUpCont.popUpControl)
+        .removeObject(popUpCont);
 
-        popUpCont.removeAllListeners('click');
-      });
+      popUpCont.removeAllListeners('click');
     });
   },
 
@@ -50,7 +50,6 @@ module.exports = pac.Sprite.extend({
         font: '12px lucaswhite',
         isBitmapText: true,
         wordWrap: 150,
-        //position: new pac.Point(scope.position.x, scope.position.y + paddingTop)
         position: new pac.Point(0, 0 + paddingTop)
         })
       );

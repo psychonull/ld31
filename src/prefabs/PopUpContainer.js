@@ -17,6 +17,7 @@ module.exports = pac.Rectangle.extend({
 
   createModal: function(pos, options){
     this.popUpControl = new popUp({
+        orientation: options.orientation,
         layer:'modals',
         zIndex: 1000,
         title: options.title, 

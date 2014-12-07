@@ -11,24 +11,36 @@ module.exports = pac.Sprite.extend({
     height: 100
   },
 
+  walkAnim: null,
+
   init: function(options){
     this.floor = (options && options.floor) || this.floor;
+
+    this.walkAnim = pac._.defaults(options.walkAnim || this.walkAnim, {
+      'idleLeft': 'idle',
+      'idleRight': 'idle',
+      'walkLeft': 'walkLeft',
+      'walkRight': 'walkRight'
+    });
   },
 
   update: function(dt){
 
+
     if (this.walkingTo){
 
       if (this.walkingTo.x >= 0){
-        this.animations.play('walkRight');
+        this.animations.play(this.walkAnim.walkRight);
+        this.lastSide = 'Right';
       }
       else {
-        this.animations.play('walkLeft');
+        this.animations.play(this.walkAnim.walkLeft);
+        this.lastSide = 'Left';
       }
 
     }
     else {
-      this.animations.play('idle');
+      this.animations.play(this.walkAnim['idle' + this.lastSide]);
     }
 
   },

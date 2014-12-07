@@ -2,6 +2,7 @@
 module.exports = {
 
   Walker: require('./Walker'),
-  WalkableObject: require('./WalkableObject')
+  WalkableObject: require('./WalkableObject'),
+  Living: require('./Living')
 
 };

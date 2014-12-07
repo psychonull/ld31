@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  FloorBack: require('./FloorBack'),
+  Floor: require('./Floor'),
 
   GrandMa: require('./GrandMa'),
   Dude: require('./Dude'),

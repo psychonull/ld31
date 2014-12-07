@@ -1,7 +1,8 @@
 
+var actions = require('../actions');
 var floorSize = { width: 908, height: 183 };
 
-module.exports = function(){
+module.exports = function(stats, livingTime){
 
   return pac.Rectangle.extend({
 
@@ -11,7 +12,10 @@ module.exports = function(){
     shape: new pac.Rectangle({ size: pac._.clone(floorSize) }),
     size: pac._.clone(floorSize),
 
-    actions: [ new pac.actions.Clickable() ],
+    actions: [
+      new pac.actions.Clickable(),
+      new actions.Living(stats.living, livingTime)
+    ],
 
     start: null,
     env: null,

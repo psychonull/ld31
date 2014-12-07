@@ -1,9 +1,9 @@
 
 var prefabs = require('../prefabs');
 
-module.exports = function(bounds, scene){
+module.exports = function(floor, scene){
 
-  var floor = bounds.getFeet();
+  var floorFeet = floor.getFeet();
 
   var boy = new prefabs.FamilyBoy({
     floor: 3
@@ -15,12 +15,13 @@ module.exports = function(bounds, scene){
 
   var pos = boy.shape.getBounds().getFeet();
 
-  boy.position = floor.subtract(pos);
+  boy.position = floorFeet.subtract(pos);
 
-  girl.position = floor.subtract(pos);
+  girl.position = floorFeet.subtract(pos);
   girl.position.x += 150;
 
   scene.addObject(boy);
   scene.addObject(girl);
 
+  require('./floor3Events')(floor);
 };

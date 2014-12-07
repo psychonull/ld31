@@ -27,12 +27,12 @@ var textures = {
 
   'familyboy': {
     path: 'assets/img/chars/familyboy.png',
-    atlas: 'assets/img/chars/familyperson.json'
+    atlas: 'assets/img/chars/familyboy.json'
   },
 
   'familygirl': {
     path: 'assets/img/chars/familygirl.png',
-    atlas: 'assets/img/chars/familyperson.json'
+    atlas: 'assets/img/chars/familygirl.json'
   },
 
   'characterCard': {
@@ -40,8 +40,14 @@ var textures = {
     atlas: 'assets/img/characterCards.json'
   },
 
+
   'infoIcon': {
     path: 'assets/img/info_icon.png'
+  },
+  
+  'some_object': {
+    path: 'assets/img/chars/grandma.png',
+    atlas: 'assets/img/chars/grandma.json'
   }
 };
 

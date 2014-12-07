@@ -13,6 +13,24 @@ module.exports = pac.Sprite.extend({
 
   init: function(options){
     this.floor = (options && options.floor) || this.floor;
-  }
+  },
+
+  update: function(dt){
+
+    if (this.walkingTo){
+
+      if (this.walkingTo.x >= 0){
+        this.animations.play('walkRight');
+      }
+      else {
+        this.animations.play('walkLeft');
+      }
+
+    }
+    else {
+      this.animations.play('idle');
+    }
+
+  },
 
 });

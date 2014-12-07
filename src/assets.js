@@ -38,6 +38,10 @@ var textures = {
   'characterCard': {
     path: 'assets/img/characterCards.png',
     atlas: 'assets/img/characterCards.json'
+  },
+
+  'infoIcon': {
+    path: 'assets/img/info_icon.png'
   }
 };
 

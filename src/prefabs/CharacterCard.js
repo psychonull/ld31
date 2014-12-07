@@ -1,10 +1,10 @@
 
+var popUpContainer = require('./PopUpContainer.js');
 module.exports = pac.Sprite.extend({
 
   texture: 'characterCard',
 
   layer: 'gui',
-
   size: {
     width: 135,
     height: 200
@@ -49,6 +49,25 @@ module.exports = pac.Sprite.extend({
         y: 90
       }
     });
+
+    this.infoIcon = new pac.Sprite({
+        texture: 'infoIcon',
+        layer: 'gui',
+        size: {
+          width: 15,
+          height: 15
+        },
+        actions: [new pac.actions.Clickable()],
+        shape: new pac.Rectangle({ 
+          size: {
+          width: 15,
+          height: 15
+        } }),
+        position: {
+          x: 110,
+          y: 90
+        }
+      });
 
     var mentalHealthText = new pac.Text({
       value: 'Mind',
@@ -95,11 +114,52 @@ module.exports = pac.Sprite.extend({
       }
     });
 
+    /*this.infoIcon
+    .on('click', function(){
+      this.game.addObject(new popUp({
+        layer:'modals',
+        title:'test', 
+        content:'test content', 
+        footer:'test footer',
+        actions: [new pac.actions.Clickable()],
+        position:{x:this.position.x, y:this.position.y}
+      }));
+    });*/
+    
+    this.infoIcon
+    .on('click', function(){
+      var popUpCont = new popUpContainer({
+        zIndex: 1,
+        layer:'modals',
+       
+        actions: [new pac.actions.Clickable()],
+        shape: new pac.Rectangle({ 
+          size: {
+          width: 1067,
+          height: 600
+        } }),
+      });
+      this.game.addObject(popUpCont);
+      popUpCont.createModal(new pac.Point(this.position.x, this.position.y), { 
+        title:'test', 
+        content:'test content', 
+        footer:'test footer'
+      });
+
+      popUpCont.on('click', function(){
+        this.game
+          .removeObject(popUpCont.popUpControl)
+          .removeObject(popUpCont);
+
+        popUpCont.removeAllListeners('click');
+      });
+    });
     this.children.add(this.captionText);
     this.children.add(mentalHealthText);
     this.children.add(physicalHealthText);
     this.children.add(this.mindBar);
     this.children.add(this.bodyBar);
+    this.children.add(this.infoIcon);
 
 
   },

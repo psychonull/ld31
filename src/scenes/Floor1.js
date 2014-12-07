@@ -1,6 +1,8 @@
 
 var prefabs = require('../prefabs');
 var actions = require('../actions');
+var InteractiveObject = require('../prefabs/InteractiveObject.js');
+var animations = require('../animations/floor1/index.js');
 
 module.exports = function(floor, scene){
 
@@ -53,6 +55,23 @@ module.exports = function(floor, scene){
 
   scene.addObject(obj);
 
+  var tv = new InteractiveObject({
+    name: 'Old TV',
+    size: {
+      width: 65,
+      height: 133
+    },
+    position: new pac.Point(488 + 11, 60 + 188 * 2 + 10*3),
+    texture: 'granma_tv',
+    frame: 'tv',
+    animationHover: 'tvHover',
+    animations: new pac.AnimationList(animations.tv, {
+      default: 'tvOff',
+      autoplay: false
+    })
+  });
+
+  scene.addObject(tv);
 
   var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
     position: new pac.Point(200, 30),

@@ -24,6 +24,8 @@ module.exports = pac.Action.extend({
   },
 
   update: function(dt) {
+    /*jshint maxcomplexity:10 */
+
     var obj = this.actions.owner;
     var isTurnOff = false;
 
@@ -39,10 +41,14 @@ module.exports = pac.Action.extend({
         else return;
       }
 
-      // TODO: add a random position to get a walker for Family
-      this.walker = this.floor.walkers.at(0);
-
       var myPos = obj.shape.getBounds(obj.position).getCenter();
+
+      this.walker = this.floor.getWalker(myPos);
+
+      if (!this.walker){
+        return;
+      }
+
       myPos.x -= this.walker.shape.size.width/2;
       myPos.y = this.walker.position.y;
 

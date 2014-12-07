@@ -45,6 +45,38 @@ module.exports = function(stats, livingTime){
           break;
       }
 
+    },
+
+    getWalker: function(toPos){
+      if (this.walkers.length === 1){
+        return this.walkers.at(0);
+      }
+
+      if (this.walkers.length > 1){
+
+        var min = {
+          index: -1,
+          len: Number.POSITIVE_INFINITY
+        };
+
+        this.walkers.each(function(walker, i){
+
+          var len = walker.position.subtract(toPos).length();
+
+          if (len < min.len){
+            min.len = len;
+            min.index = i;
+          }
+        });
+
+        if (min.index > -1){
+          return this.walkers.at(min.index);
+        }
+
+        return null;
+      }
+
+      return null;
     }
 
   });

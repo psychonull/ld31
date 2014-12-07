@@ -3,6 +3,7 @@ var prefabs = require('../prefabs');
 var actions = require('../actions');
 var InteractiveObject = require('../prefabs/InteractiveObject.js');
 var animations = require('../animations/floor1/index.js');
+var activables = require('./activables.js').floor1;
 
 module.exports = function(floor, scene){
 
@@ -54,7 +55,8 @@ module.exports = function(floor, scene){
     animations: new pac.AnimationList(animations.tv, {
       default: 'tvOff',
       autoplay: false
-    })
+    }),
+    actions: [ new actions.Activable(activables.tv) ]
   });
 
   scene.addObject(tv);

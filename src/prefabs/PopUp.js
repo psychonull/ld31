@@ -7,12 +7,18 @@ module.exports = pac.Rectangle.extend({
   },
   fill: '#4f4f4f',
   content: 'Content',
-
+  orientation: 'right',
   init: function(options){
-    /*jshint maxcomplexity: 10*/
+    /*jshint maxcomplexity: 15*/
     this.layer = (options && options.layer) || this.layer;
     this.content = (options && options.content) || this.content;
-    this.position.x = options.position.x - this.size.width;
+    this.orientation = (options && options.orientation) || this.orientation;
+    
+    if(this.orientation === 'left')
+      this.position.x = options.position.x - this.size.width;
+    else if(this.orientation === 'right')
+      this.position.x = options.position.x;
+
     this.position.y = options.position.y;
 
 

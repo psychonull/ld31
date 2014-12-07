@@ -1,8 +1,7 @@
 
 module.exports = {
-
   Walker: require('./Walker'),
-  Activable: require('./Activable'),
-  Living: require('./Living')
-
+  Living: require('./Living'),
+  MenuCommander: require('./MenuCommander'),
+  Activable: require('./Activable')
 };

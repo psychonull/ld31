@@ -40,5 +40,5 @@ module.exports = function(floor, scene){
 
   scene.addObject(MenuObject);
 
-  require('./floor1Events')(floor);
+  require('./floor1Events')(floor, grandMa);
 };

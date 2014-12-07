@@ -15,38 +15,39 @@ var InteractiveObject = pac.Sprite.extend({
   actions: [],
 
   init: function(options){
+    this.frameHover = (options && options.frameHover) || this.frameHover;
 
-    this.frameHover = (options && options.frameHover) ||
-      (this.frame && this.frame + '_hover') || this.frameHover;
+    if (this.frameHover && this.texture){
+      this.createHover();
+    }
+  },
 
-    this.animationHover = (options && options.animationHover) ||
-      (this.frame && this.frame + '_hover') || this.animationHover;
+  createHover: function(){
+    this.hoverChild = new pac.Sprite({
+      texture: this.texture,
+      frame: this.frameHover,
+      size: pac._.clone(this.size),
+      visible: false
+    });
 
-    this.actions.pushFront(new pac.actions.Hoverable());
+    this.children.add(this.hoverChild);
+  },
 
-    this
-      .on('hover:in', _.bind(function(){
-        if(this.animationHover){
-          this.originalAnimation = this.animations.current._name;
-          this.animations.play(this.animationHover);
-        }
-        else {
-          this.originalFrame = this.frame;
-          this.frame = this.frameHover;
+  update: function(dt){
+    this._hover();
+  },
 
-        }
-      }, this))
-      .on('hover:out', _.bind(function(){
-        if(this.animationHover){
-          this.animations.play(this.originalAnimation);
-          this.originalAnimation = null;
-        }
-        else{
-          this.frame = this.originalFrame;
-          this.originalFrame = null;
-        }
-      }, this));
+  _hover: function(){
+    if (!this.hoverChild){
+      return;
+    }
 
+    if (this.isHover && !this.hoverChild.visible){
+      this.hoverChild.visible = true;
+    }
+    else if(!this.isHover && this.hoverChild.visible) {
+      this.hoverChild.visible = false;
+    }
   }
 
 });

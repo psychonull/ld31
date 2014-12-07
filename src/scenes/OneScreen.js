@@ -17,17 +17,17 @@ var OneScreen = pac.Scene.extend({
 
     var floor1 = new (prefabs.FloorBack())({
       name: 'floor1',
-      position: new pac.Point(x, 406)
+      position: new pac.Point(x, 407)
     });
 
     var floor2 = new (prefabs.FloorBack())({
       name: 'floor2',
-      position: new pac.Point(x, 206)
+      position: new pac.Point(x, 208)
     });
 
     var floor3 = new (prefabs.FloorBack())({
       name: 'floor3',
-      position: new pac.Point(x, 11)
+      position: new pac.Point(x, 12)
     });
 
     this.addObject([ floor1, floor2, floor3 ]);

@@ -5,5 +5,6 @@ module.exports = {
   Dude: require('./Dude'),
   FamilyBoy: require('./FamilyBoy'),
   FamilyGirl: require('./FamilyGirl'),
+  floor1: require('./floor1')
 
 };

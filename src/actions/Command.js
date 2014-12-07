@@ -24,14 +24,24 @@ module.exports = pac.Action.extend({
     this.floor = obj.game.findOne('floor' + obj.floor);
 
     if (this.animation){
+
+      if (this.animateAction){
+        this.actions._endAction(this.animateAction, true);
+      }
+
       this.animateAction = new pac.actions.Animate(this.animation);
       this.actions.pushFront(this.animateAction);
     }
 
     pac._.forIn(this.env, function(coef, name){
+      if (!obj.game.env[name]){
+        obj.game.env[name] = 0;
+      }
+
       obj.game.env[name] += coef;
     }, this);
 
+    obj.isActivated = true;
     this.floor.onActivateObject(obj);
   },
 
@@ -40,12 +50,19 @@ module.exports = pac.Action.extend({
 
     pac._.forIn(this.env, function(coef, name){
       obj.game.env[name] -= coef;
+
+      if (!obj.game.env[name] || obj.game.env[name] < 0) {
+        obj.game.env[name] = 0;
+      }
     }, this);
 
     if (this.animateAction){
       this.actions._endAction(this.animateAction, true);
+      this.animateAction = null;
+      obj.animations._playDefault();
     }
 
+    obj.isActivated = false;
     this.floor.onDeactivateObject(obj);
   },
 
@@ -60,7 +77,7 @@ module.exports = pac.Action.extend({
       this.interval = 0;
     }
 
-    if (this.elapsed >= this.duration){
+    if (this.duration !== true && this.elapsed >= this.duration){
       this.isFinished = true;
     }
 

@@ -48,9 +48,19 @@ module.exports = pac.Action.extend({
   },
 
   update: function(dt) {
+    var obj = this.actions.owner;
 
     if (this.floor.isClicked){
-      this.actions.owner.actions.removeAll(pac.actions.WalkTo);
+
+      if (this.floor.walkers.length > 1){
+        var walker = this.floor.getWalker(this._getTarget());
+
+        if (obj.cid !== walker.cid){
+          return;
+        }
+      }
+
+      this.actions.removeAll(pac.actions.WalkTo);
       this.doOnNextTick = true;
       return;
     }

@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "cama": {
+      "x": 0,
+      "y": 0,
+      "width": 111,
+      "height": 108
+    },
+    "cama_hover": {
+      "x": 0,
+      "y": 108,
+      "width": 111,
+      "height": 108
+    },
+    "cama_on_0": {
+      "x": 111,
+      "y": 0,
+      "width": 111,
+      "height": 108
+    },
+    "cama_on_1": {
+      "x": 111,
+      "y": 108,
+      "width": 111,
+      "height": 108
+    }
+  }
+}

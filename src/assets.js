@@ -44,11 +44,27 @@ var textures = {
   'infoIcon': {
     path: 'assets/img/info_icon.png'
   },
-  
+
   'some_object': {
     path: 'assets/img/chars/grandma.png',
     atlas: 'assets/img/chars/grandma.json'
+  },
+
+
+  /* Vieja */
+  'granma_tv': {
+    path: 'assets/img/granma/granma_tv.png',
+    atlas: 'assets/img/granma/granma_tv.json'
+  },
+  'granma_bed': {
+    path: 'assets/img/granma/granma_bed.png',
+    atlas: 'assets/img/granma/granma_bed.json'
+  },
+  'granma_kitchen': {
+    path: 'assets/img/granma/granma_kitchen.png',
+    atlas: 'assets/img/granma/granma_kitchen.json'
   }
+
 };
 
 module.exports = pac._.merge(fonts, textures);

@@ -1,7 +1,8 @@
 
+var actions = require('../actions');
 var floorSize = { width: 908, height: 183 };
 
-module.exports = function(){
+module.exports = function(stats, livingTime){
 
   return pac.Rectangle.extend({
 
@@ -11,7 +12,10 @@ module.exports = function(){
     shape: new pac.Rectangle({ size: pac._.clone(floorSize) }),
     size: pac._.clone(floorSize),
 
-    actions: [ new pac.actions.Clickable() ],
+    actions: [
+      new pac.actions.Clickable(),
+      new actions.Living(stats.living, livingTime)
+    ],
 
     start: null,
     env: null,
@@ -41,7 +45,39 @@ module.exports = function(){
           break;
       }
 
-    }
+    },
+
+    getWalker: function(toPos){
+      if (this.walkers.length === 1){
+        return this.walkers.at(0);
+      }
+
+      if (this.walkers.length > 1){
+
+        var min = {
+          index: -1,
+          len: Number.POSITIVE_INFINITY
+        };
+
+        this.walkers.each(function(walker, i){
+
+          var len = walker.position.subtract(toPos).length();
+
+          if (len < min.len){
+            min.len = len;
+            min.index = i;
+          }
+        });
+
+        if (min.index > -1){
+          return this.walkers.at(min.index);
+        }
+
+        return null;
+      }
+
+      return null;
+    },
 
   });
 

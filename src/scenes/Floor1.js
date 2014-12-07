@@ -1,6 +1,7 @@
 
 var prefabs = require('../prefabs');
 var actions = require('../actions');
+var InteractiveObject = require('../prefabs/InteractiveObject.js');
 
 module.exports = function(floor, scene){
 
@@ -13,45 +14,32 @@ module.exports = function(floor, scene){
   var pos = grandMa.shape.getBounds().getFeet();
   grandMa.position = floorFeet.subtract(pos);
 
-
   scene.addObject(grandMa);
 
-
-
-  //// tessssst
-
-  var DummyObject = pac.Sprite.extend({
-    layer: 'objects',
-    zIndex: 50,
-
-    shape: true,
-
-    size: {
-      width: 50,
-      height: 50
-    },
-
-    floor: 1,
+  var objects = require('./floor1Objects')(floor);
+  objects.forEach(function(obj) {
+    scene.addObject(new InteractiveObject(obj));
   });
 
-  var obj = new DummyObject({
-    name: 'Little GrandMa',
-    position: floor.position.add(new pac.Point(100, 30)),
+  /*var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
+    position: new pac.Point(200, 30),
     frame: 'idle1',
     texture: 'some_object',
-    actions: [ new actions.Activable({
-      command: {
-        env: { music: 0.1, tv: 0.1 },
-        state: { mind: -0.01, body: 0.05 },
-        //animation: 'test',
-        duration: 2, // seconds
-        changeInterval: 0.5, // apply state every X seconds
+    shape: new pac.Rectangle(),
+    actions: [ new actions.MenuCommander({
+      menuOptions: [{text: 'funciona'}, {text: 'bien'}],
+      position: floor.position.add(new pac.Point(200, 30)),
+      size: {
+        width: 100,
+        height: 100
       },
-      nearness: 50
-    }) ]
-  });
+      floor: 2
+      })
+    ]
+  });*/
 
-  scene.addObject(obj);
+
+  //scene.addObject(obj);
 
 
     /*var MenuObject = new DummyObject({
@@ -71,11 +59,6 @@ module.exports = function(floor, scene){
     });
   scene.addObject(MenuObject);*/
 
-  floor.onActivateObject = function(obj){
-    console.log('onActivateObject > ' + obj.name);
-  };
 
-  floor.onDeactivateObject = function(obj){
-    console.log('onDeactivateObject > ' + obj.name);
-  };
+  require('./floor1Events')(floor, grandMa);
 };

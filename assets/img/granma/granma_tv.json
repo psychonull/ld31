@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "tv": {
+      "x": 0,
+      "y": 0,
+      "width": 65,
+      "height": 133
+    },
+    "tv_hover": {
+      "x": 65,
+      "y": 0,
+      "width": 65,
+      "height": 133
+    },
+    "tv_on_0": {
+      "x": 130,
+      "y": 0,
+      "width": 65,
+      "height": 133
+    },
+    "tv_on_1": {
+      "x": 195,
+      "y": 0,
+      "width": 65,
+      "height": 133
+    }
+  }
+}

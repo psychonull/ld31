@@ -1,0 +1,34 @@
+{
+  "frames": {
+    "cocina": {
+      "x": 0,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "cocina_hover": {
+      "x": 57,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "cocina_on_0": {
+      "x": 114,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "cocina_on_1": {
+      "x": 0,
+      "y": 105,
+      "width": 57,
+      "height": 105
+    },
+    "cocina_on_2": {
+      "x": 57,
+      "y": 105,
+      "width": 57,
+      "height": 105
+    }
+  }
+}

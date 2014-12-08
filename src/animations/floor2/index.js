@@ -1,4 +1,4 @@
 
 module.exports = {
-  bed: require('./bed')
+  bedDude: require('./bedDude')
 };

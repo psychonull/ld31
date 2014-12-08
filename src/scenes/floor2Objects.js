@@ -4,7 +4,7 @@ var activables = require('./activables').floor2;
 var animations = require('../animations/floor2');
 
 module.exports = function(floor) {
-
+  
   return [
     {
       name: 'Dude Bed',
@@ -19,11 +19,11 @@ module.exports = function(floor) {
 
       frameHover: 'dude_bed_hover',
 
-      animations: new pac.AnimationList(animations.bed, {
-        default: 'bedOff',
+      animations: new pac.AnimationList(animations.bedDude, {
+        default: 'dudeBedOff',
         autoplay: false
       }),
-      actions: [ new actions.Activable(activables.bed) ]
+      actions: [ new actions.Activable(activables.bedDude) ]
     }
   ];
 };

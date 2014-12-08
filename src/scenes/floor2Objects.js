@@ -65,6 +65,26 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.dudeOven) ]
+    },
+    ,
+    {
+      name: 'Dude Shower',
+      position: floor.position.add(new pac.Point(25, 8)),
+      size: {
+        width: 100,
+        height: 175
+      },
+      floor: 2,
+      frame: 'dude_shower',
+      texture: 'dude_shower',
+
+      frameHover: 'dude_shower_hover',
+
+      animations: new pac.AnimationList(animations.dudeShower, {
+        default: 'dudeShowerOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.dudeShower) ]
     }
   ];
 };

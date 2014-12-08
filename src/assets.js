@@ -78,6 +78,10 @@ var textures = {
     path: 'assets/img/dude/dude_oven.png',
     atlas: 'assets/img/dude/dude_oven.json'
   },
+  'dude_shower': {
+    path: 'assets/img/dude/dude_shower.png',
+    atlas: 'assets/img/dude/dude_shower.json'
+  },
 
   //family
   'family_bed': {

@@ -16,6 +16,11 @@ module.exports = function(floor, boy, girl){
         boy.visible = false;
         dudeWater.visible = true;
         break;
+      case 'Baby':
+        this.game.sounds.babyCrying.loop(true);
+        this.game.sounds.babyCrying.play();
+        this.game.sounds.babyCrying.volume(0.1);
+        break;
     }
   };
 
@@ -34,6 +39,7 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Baby':
         // Delay between 3 and 15 seconds
+        this.game.sounds.babyCrying.stop();
         var delay = Math.floor(Math.random() * 15) + 3;
 
         var activable;

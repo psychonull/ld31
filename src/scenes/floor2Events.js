@@ -14,8 +14,9 @@ module.exports = function(floor, dude){
         dude.visible = dude.active = false;
         break;
       case 'Dude Stereo':
-        this.game.sounds.musicaDude.loop(true);
+        this.game.sounds.musicaDude.loop(true);        
         this.game.sounds.musicaDude.play();
+        this.game.sounds.musicaDude.volume(0.1);
         break;
     }
   };

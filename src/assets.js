@@ -83,6 +83,14 @@ var textures = {
   'family_bed': {
     path: 'assets/img/family/family_bed.png',
     atlas: 'assets/img/family/family_bed.json'
+  },
+  'baby': {
+    path: 'assets/img/family/baby.png',
+    atlas: 'assets/img/family/baby.json'
+  },
+  'family_kitchen': {
+    path: 'assets/img/family/family_kitchen.png',
+    atlas: 'assets/img/family/family_kitchen.json'
   }
 
 };

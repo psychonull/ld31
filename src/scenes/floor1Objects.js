@@ -25,7 +25,7 @@ module.exports = function(floor) {
     texture: 'granma_tv',
 
     frameHover: 'tv_hover',
-
+    caption: ['Turn ON old TV', 'Turn OFF old TV'],
     animations: new pac.AnimationList(animations.tv, {
       default: 'tvOff',
       autoplay: false
@@ -45,7 +45,8 @@ module.exports = function(floor) {
     texture: 'granma_bed',
 
     frameHover: 'cama_hover',
-
+    caption: ['Sleep in old bed', 'Wake up'],
+    captionOffset: new pac.Point(20, 20),
     animations: new pac.AnimationList(animations.bed, {
       default: 'bedOff',
       autoplay: false
@@ -65,7 +66,9 @@ module.exports = function(floor) {
     texture: 'granma_kitchen',
 
     frameHover: 'cocina_hover',
+    caption: ['Cook', 'Stop cooking'],
 
+    captionOffset: new pac.Point(-20, 10),
     animations: new pac.AnimationList(animations.kitchen, {
       default: 'kitchenOff',
       autoplay: false

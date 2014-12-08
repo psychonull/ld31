@@ -2,7 +2,7 @@
 module.exports = {
 
   kitchenOn: new pac.Animation({
-    fps: 2,
+    fps: 5,
     frames: ['cocina_on_0','cocina_on_1','cocina_on_2']
   }),
 

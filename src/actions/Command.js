@@ -77,8 +77,13 @@ module.exports = pac.Action.extend({
       this.interval = 0;
     }
 
+    if(this.duration !== true){
+      obj.commandRemainingTime = this.duration - this.elapsed;
+    }
+
     if (this.duration !== true && this.elapsed >= this.duration){
       this.isFinished = true;
+      obj.commandRemainingTime = null;
     }
 
   },

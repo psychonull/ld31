@@ -10,7 +10,9 @@
     "lib": "src",
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "howler": "~1.1.25"
+  },
   "devDependencies": {
     "class-extend": "~0.1.1",
     "grunt": "~0.4.5",

@@ -42,16 +42,24 @@ module.exports = function(floor) {
         default: 'babyOff',
         autoplay: false
       }),
-actions: [new actions.Activable(activables.baby) ]
-      /*actions: [  new pac.actions.Delay(10),
-                  new pac.actions.Execute(function (dt, action) {
-                    var command = new actions.Command(activables.baby.command);
-                    this.actions.removeAll(actions.Command);
-                    this.actions.pushFront(command);
-                    return true;
-                  }),
-                  new actions.Activable(activables.babySleep) 
-               ]*/
+
+      actions: [
+        // Delay between 8 and 15 seconds
+        new pac.actions.Delay(Math.floor(Math.random() * 15) + 8),
+        new pac.actions.Execute(function (dt, action) {
+          var command = new actions.Command(
+            pac._.clone(activables.baby.command, true));
+
+          this.actions
+            .removeAll(actions.Command)
+            .pushFront(command)
+            .pushBack(new actions.Activable(
+              pac._.clone(activables.babySleep, true)
+            ));
+
+          return true;
+        }),
+      ]
     },
     {
       name: 'Family Kitchen',
@@ -108,7 +116,7 @@ actions: [new actions.Activable(activables.baby) ]
     frameHover: 'familyFood_hover',
     caption: ['Eat food'],
 
-    captionOffset: new pac.Point(-20, -20),    
+    captionOffset: new pac.Point(-20, -20),
 
     actions: [ new actions.Activable(activables.familyFood) ]
     }

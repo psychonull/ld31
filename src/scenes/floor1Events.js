@@ -8,11 +8,10 @@ module.exports = function(floor, granMa){
 
     switch(obj.name){
       case 'Old Bed':
-        granMa.visible = false;
-        granMa.active = false;
+        granMa.visible = granMa.active = false;
         break;
       case 'Old Shower':
-        granMa.visible = false;
+        granMa.visible = granMa.active = false;
         break;
       case 'Grandma Broom':
         granMa.visible = granMa.active = obj.active = false;
@@ -26,11 +25,10 @@ module.exports = function(floor, granMa){
 
     switch(obj.name){
       case 'Old Bed':
-        granMa.visible = true;
-        granMa.active = true;
+        granMa.visible = granMa.active = true;
         break;
       case 'Old Shower':
-        granMa.visible = true;
+        granMa.visible = granMa.active = true;
         break;
       case 'Grandma Broom':
         obj.position = floor.position.add(new pac.Point(675, 22));
@@ -38,12 +36,10 @@ module.exports = function(floor, granMa){
         break;
       case 'Old kitchen':
         var food = this.scene.findOne('Grandma Food');
-        food.visible = true;
-        food.active = true;
+        food.visible = granMa.active = true;
         break;
       case 'Grandma Food':
-        obj.visible = false;
-        obj.active = false;
+        obj.visible = granMa.active = false;
         break;
     }
   };

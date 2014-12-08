@@ -8,10 +8,8 @@ module.exports = function(floor, boy, girl){
 
     switch(obj.name){
       case 'Family Bed':
-        boy.visible = false;
-        girl.visible = false;
-        boy.active = false;
-        girl.active = false;
+        boy.visible = boy.active = false;
+        girl.visible = girl.active = false;
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
@@ -26,37 +24,61 @@ module.exports = function(floor, boy, girl){
 
     switch(obj.name){
       case 'Family Bed':
-        boy.visible = true;
-        girl.visible = true;
-        boy.active = true;
-        girl.active = true;
+        boy.visible = boy.active = true;
+        girl.visible = girl.active = true;
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
         boy.visible = true;
         dudeWater.visible = false;
         break;
-      //case 'Baby':
-        /*var delay = Math.round(Math.random() * 10);
-        obj.actions.pushFront(new pac.actions.Delay(delay));
-        obj.actions.pushFront(
-          new pac.actions.Execute(function (dt, action) {
-                    var command = new actions.Command(activables.baby.command);
+      case 'Baby':
+        // Delay between 3 and 15 seconds
+        var delay = Math.floor(Math.random() * 15) + 3;
 
-                    this.actions.pushFront(command);
-                    return true;
-                  })
-        );
-        obj.actions.pushFront(new actions.Activable(activables.babySleep));*/
-        //break;
+        var activable;
+
+        // get Current Activable Action
+        obj.actions.each(function(action){
+          if (action instanceof actions.Activable){
+            activable = action;
+            return false;
+          }
+        });
+
+        // create an Execute Action to run a command after a Delay
+        var execute = new pac.actions.Execute(function (dt, action) {
+
+          var command = new actions.Command(
+            pac._.clone(activables.baby.command, true));
+
+          this.actions.removeAll(actions.Command);
+
+          // Insert the command right after this action
+          action.insertBehindMe(command);
+
+          // Activate Hover and Click of the baby
+          this.active = true;
+
+          return true;
+        });
+
+        // Insert the Delay and the Execute Actions as
+        // 1. Delay | 2. Execute | 3. Activable
+        obj.actions
+          .insertBefore(execute, activable)
+          .insertBefore(new pac.actions.Delay(delay), execute);
+
+        // Remove Hover and Click of the baby
+        obj.active = false;
+
+        break;
       case 'Family Kitchen':
         var food = this.scene.findOne('Family Food');
-        food.visible = true;
-        food.active = true;
+        food.visible = food.active = true;
         break;
       case 'Family Food':
-        obj.visible = false;
-        obj.active = false;
+        obj.visible = obj.active = false;
         break;
     }
   };

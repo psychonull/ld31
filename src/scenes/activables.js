@@ -133,7 +133,7 @@ module.exports = {
       command: {
         state: { mind: 0.05, body: -0.01 },
         animation: 'babyoff',
-        duration: 3,
+        duration: true,
         changeInterval: 0.5,
       },
       nearness: 50

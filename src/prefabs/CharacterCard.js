@@ -16,11 +16,18 @@ module.exports = pac.Sprite.extend({
   mind: 1,
   body: 1,
 
+  popup: {
+    title: '',
+    content: '',
+    footer: ''
+  },
+
   init: function(options){
 
     this.caption = (options && options.caption) || this.caption;
     this.mind = (options && options.mind) || this.mind;
     this.body = (options && options.body) || this.body;
+    this.popup = (options && options.popup) || this.popup;
 
     if(options.avatarFrame){
       this.avatar = new pac.Sprite({
@@ -58,7 +65,7 @@ module.exports = pac.Sprite.extend({
           height: 15
         },
         actions: [new pac.actions.Clickable()],
-        shape: new pac.Rectangle({ 
+        shape: new pac.Rectangle({
           size: {
           width: 15,
           height: 15
@@ -118,22 +125,22 @@ module.exports = pac.Sprite.extend({
     .on('click', function(){
       this.game.addObject(new popUp({
         layer:'modals',
-        title:'test', 
-        content:'test content', 
+        title:'test',
+        content:'test content',
         footer:'test footer',
         actions: [new pac.actions.Clickable()],
         position:{x:this.position.x, y:this.position.y}
       }));
     });*/
-    
+    var that = this;
     this.infoIcon
     .on('click', function(){
       var popUpCont = new popUpContainer({
         zIndex: 1,
         layer:'modals',
-       
+
         actions: [new pac.actions.Clickable()],
-        shape: new pac.Rectangle({ 
+        shape: new pac.Rectangle({
           size: {
           width: 1067,
           height: 600
@@ -142,9 +149,9 @@ module.exports = pac.Sprite.extend({
       this.game.addObject(popUpCont);
       popUpCont.createModal(new pac.Point(this.position.x, this.position.y), {
         orientation: 'left',
-        title:'test', 
-        content:'test content', 
-        footer:'test footer',
+        title:that.popup.title,
+        content:that.popup.content,
+        footer:that.popup.footer,
         size: {
           width: 400,
           height: 200

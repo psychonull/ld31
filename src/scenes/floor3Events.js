@@ -10,6 +10,8 @@ module.exports = function(floor, boy, girl){
       case 'Family Bed':
         boy.visible = false;
         girl.visible = false;
+        boy.active = false;
+        girl.active = false;
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
@@ -26,6 +28,8 @@ module.exports = function(floor, boy, girl){
       case 'Family Bed':
         boy.visible = true;
         girl.visible = true;
+        boy.active = true;
+        girl.active = true;
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');

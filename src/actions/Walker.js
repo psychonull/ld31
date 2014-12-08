@@ -50,7 +50,7 @@ module.exports = pac.Action.extend({
   update: function(dt) {
     var obj = this.actions.owner;
 
-    if (this.floor.isClicked){
+    if (this.floor.isClicked && obj.active){
 
       if (this.floor.walkers.length > 1){
         var walker = this.floor.getWalker(this._getTarget());

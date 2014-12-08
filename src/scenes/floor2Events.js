@@ -7,6 +7,7 @@ module.exports = function(floor, dude){
     switch(obj.name){
       case 'Dude Bed':
         dude.visible = false;
+        dude.active = false;
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
@@ -21,7 +22,8 @@ module.exports = function(floor, dude){
 
     switch(obj.name){
       case 'Dude Bed':
-        dude.visible = true;
+        dude.visible = true; 
+        dude.active = true;       
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');

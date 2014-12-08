@@ -45,7 +45,7 @@ module.exports = pac.Action.extend({
 
       this.walker = this.floor.getWalker(myPos);
 
-      if (!this.walker){
+      if (!this.walker || (this.walker && !this.walker.active)) {
         return;
       }
 

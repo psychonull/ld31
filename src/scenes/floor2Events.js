@@ -13,6 +13,10 @@ module.exports = function(floor, dude){
         oldWater.visible = true;
         dude.visible  = false;
         break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.loop(true);
+        this.game.sounds.musicaDude.play();
+        break;
     }
   };
 
@@ -28,6 +32,10 @@ module.exports = function(floor, dude){
         oldWater.visible = false;
         dude.visible = true;
         break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.stop();
+        break;
+        
     }
   };
 

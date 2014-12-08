@@ -17,10 +17,21 @@ var InteractiveObject = pac.Sprite.extend({
   init: function(options){
     this.floor = (options && options.floor) || this.floor;
     this.frameHover = (options && options.frameHover) || this.frameHover;
+    this.caption = (options && options.caption) || this.caption;
 
     if (this.frameHover && this.texture){
       this.createHover();
     }
+    this.actions.pushFront(new pac.actions.Speaker({
+      textOptions: {
+        font: '10px lucas',
+        isBitmapText: true,
+        wordWrap: '200',
+        wrapToScreen: false
+      },
+      offset: (options && options.captionOffset) || new pac.Point(0,-10),
+      smartPosition: false,
+    }));
   },
 
   createHover: function(){
@@ -45,9 +56,11 @@ var InteractiveObject = pac.Sprite.extend({
 
     if (this.isHover && !this.hoverChild.visible){
       this.hoverChild.visible = true;
+      this.speakerText.value = this.caption || this.name;
     }
     else if(!this.isHover && this.hoverChild.visible) {
       this.hoverChild.visible = false;
+      this.speakerText.value = '';
     }
   }
 

@@ -4,7 +4,7 @@ var activables = require('./activables').floor2;
 var animations = require('../animations/floor2');
 
 module.exports = function(floor) {
-  
+
   return [
     {
       name: 'Dude Bed',
@@ -18,6 +18,7 @@ module.exports = function(floor) {
       texture: 'dude_bed',
 
       frameHover: 'dude_bed_hover',
+      captionOffset: new pac.Point(20, 25),
 
       animations: new pac.AnimationList(animations.bedDude, {
         default: 'dudeBedOff',

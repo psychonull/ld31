@@ -12,7 +12,9 @@ module.exports = function(floor, boy, girl){
         girl.visible = false;
         break;
       case 'Family Shower':
-          boy.visible = false;
+        var dudeWater = this.scene.findOne('Dude Water');
+        boy.visible = false;
+        dudeWater.visible = true;
         break;
     }
   };
@@ -26,7 +28,9 @@ module.exports = function(floor, boy, girl){
         girl.visible = true;
         break;
       case 'Family Shower':
+        var dudeWater = this.scene.findOne('Dude Water');
         boy.visible = true;
+        dudeWater.visible = false;
         break;
       case 'Baby':
         /*var delay = Math.round(Math.random() * 10);

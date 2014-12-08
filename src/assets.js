@@ -68,6 +68,10 @@ var textures = {
     path: 'assets/img/granma/grandma_shower.png',
     atlas: 'assets/img/granma/grandma_shower.json'
   },
+  'grandma_water': {
+    path: 'assets/img/water.png',
+    atlas: 'assets/img/water.json'
+  },
 
   //Dude
   'dude_bed': {
@@ -85,6 +89,10 @@ var textures = {
   'dude_shower': {
     path: 'assets/img/dude/dude_shower.png',
     atlas: 'assets/img/dude/dude_shower.json'
+  },
+  'dude_water': {
+    path: 'assets/img/water.png',
+    atlas: 'assets/img/water.json'
   },
 
   //family

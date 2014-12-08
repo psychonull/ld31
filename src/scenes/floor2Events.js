@@ -8,6 +8,9 @@ module.exports = function(floor, dude){
       case 'Dude Bed':
         dude.visible = false;
         break;
+      case 'Dude Shower':
+        dude.visible  = false;
+        break;
     }
   };
 
@@ -16,6 +19,9 @@ module.exports = function(floor, dude){
 
     switch(obj.name){
       case 'Dude Bed':
+        dude.visible = true;
+        break;
+      case 'Dude Shower':
         dude.visible = true;
         break;
     }

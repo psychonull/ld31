@@ -1,0 +1,16 @@
+{
+  "frames": {
+    "granmaFood": {
+      "x": 0,
+      "y": 0,
+      "width": 34,
+      "height": 19
+    },
+    "granmaFood_hover": {
+      "x": 34,
+      "y": 0,
+      "width": 34,
+      "height": 19
+    }
+  }
+}

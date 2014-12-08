@@ -65,8 +65,7 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.dudeOven) ]
-    },
-    ,
+    },    
     {
       name: 'Dude Shower',
       position: floor.position.add(new pac.Point(25, 8)),

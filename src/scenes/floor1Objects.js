@@ -55,7 +55,7 @@ module.exports = function(floor) {
     texture: 'granma_kitchen',
 
     frameHover: 'cocina_hover',
-    caption: ['Cook', 'Stop cooking'],
+    caption: ['Cook', ''],
 
     captionOffset: new pac.Point(-20, 10),
     animations: new pac.AnimationList(animations.kitchen, {
@@ -64,6 +64,26 @@ module.exports = function(floor) {
     }),
 
     actions: [ new actions.Activable(activables.kitchen) ]
+
+  }, {
+    name: 'Grandma Food',
+    position: floor.position.add(new pac.Point(802, 122)),
+    size: {
+      width: 34,
+      height: 19
+    },
+    frame: 'granmaFood',
+    texture: 'granma_food',
+
+    visible: false,
+    active: false,
+
+    frameHover: 'granmaFood_hover',
+    caption: ['Eat food'],
+
+    captionOffset: new pac.Point(-20, -20),    
+
+    actions: [ new actions.Activable(activables.grandmaFood) ]
 
   }];
 

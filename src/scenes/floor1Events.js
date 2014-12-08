@@ -17,7 +17,7 @@ module.exports = function(floor, granMa){
     switch(obj.name){
       case 'Old Bed':
         granMa.visible = true;
-        break;
+        break;      
     }
   };
 

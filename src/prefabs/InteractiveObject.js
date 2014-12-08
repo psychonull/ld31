@@ -54,7 +54,7 @@ var InteractiveObject = pac.Sprite.extend({
   update: function(dt){
     this._hover();
     if(this.commandRemainingTime){
-      this.speakerText.value = this.caption[1] + '' + this.commandRemainingTime;
+      this.speakerText.value = '';//this.caption[1] + '' + this.commandRemainingTime;
     }
   },
 

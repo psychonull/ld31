@@ -4,7 +4,7 @@ module.exports = {
   floor1: {
     tv: {
       command: {
-        env: { garnmaTV: 0.1 },
+        env: { granmaTV: 0.1 },
         state: { mind: 0.05, body: -0.01 },
         animation: 'tvOn',
         duration: 30,

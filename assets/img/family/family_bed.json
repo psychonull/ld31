@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "family_bed": {
+      "x": 0,
+      "y": 0,
+      "width": 110,
+      "height": 110
+    },
+    "family_bed_hover": {
+      "x": 0,
+      "y": 110,
+      "width": 110,
+      "height": 110
+    },
+    "family_bed_on_0": {
+      "x": 110,
+      "y": 0,
+      "width": 110,
+      "height": 110
+    },
+    "family_bed_on_1": {
+      "x": 110,
+      "y": 110,
+      "width": 110,
+      "height": 110
+    }
+  }
+}

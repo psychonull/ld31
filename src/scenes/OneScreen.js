@@ -8,6 +8,7 @@ var stats = require('./Stats');
 var OneScreen = pac.Scene.extend({
 
   texture: 'back_building',
+  deadCount: 0,
 
   init: function(options){
 
@@ -46,6 +47,8 @@ var OneScreen = pac.Scene.extend({
     require('./Floor1')(this.floor1, this);
     require('./Floor2')(this.floor2, this);
     require('./Floor3')(this.floor3, this);
+
+    this.showScores = require('./showScores.js')(this.game);
   },
 
   onExit: function(scene){
@@ -55,14 +58,45 @@ var OneScreen = pac.Scene.extend({
   update: function(dt){
     if(this.game.familyCard.disabled && !this.floor3.disabled){
       this.floor3.disable();
+      this.deadCount++;
     }
     if(this.game.dudeCard.disabled && !this.floor2.disabled){
       this.floor2.disable();
+      this.deadCount++;
     }
     if(this.game.granmaCard.disabled && !this.floor1.disabled){
       this.floor1.disable();
+      this.deadCount++;
     }
+    if(this.deadCount === 2){
+      this.showEnding();
+    }
+  },
+
+  showEnding: function(){
+    this.game.pause();
+
+    var msg = '';
+    if(!this.floor1.disabled){
+      msg = 'You behave like a sweet selfish granny.';
+    }
+    else if(!this.floor2.disabled){
+      msg = 'Time to get serious, uh?';
+    }
+    else if(!this.floor3.disabled){
+      msg = 'You are a family hero.';
+    }
+    this.showScores(
+      ['YOU LOST.', msg],
+      (this.game.time / 1000).toFixed(2));
+
+    window.setTimeout(function(){
+      window.addEventListener('click', function(){
+        window.location.href = window.location.href;
+      });
+    }, 1000);
   }
+
 });
 
 module.exports = OneScreen;

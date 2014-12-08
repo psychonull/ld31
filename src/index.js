@@ -29,7 +29,8 @@ game.use('input', pac.MouseInput, {
 });
 
 game.use('scenes', {
-  'oneScreen': new scenes.OneScreen()
+  'oneScreen': new scenes.OneScreen(),
+  'reset': new scenes.Reset()
 });
 
 game.loader.on('progress', Loading.update);

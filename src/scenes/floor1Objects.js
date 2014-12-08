@@ -44,7 +44,31 @@ module.exports = function(floor) {
 
     actions: [ new actions.Activable(activables.bed) ]
 
-  }, {
+  }, 
+
+  {
+    name: 'Old Shower',
+    position: floor.position.add(new pac.Point(-2, 74)),
+    size: {
+      width: 111,
+      height: 108
+    },
+    frame: 'grandma_shower',
+    texture: 'grandma_shower',
+
+    frameHover: 'grandma_shower_hover',
+    caption: ['Take a shower', 'Take a shower'],
+    captionOffset: new pac.Point(20, 20),
+    animations: new pac.AnimationList(animations.grandmaShower, {
+      default: 'grandmaShowerOff',
+      autoplay: false
+    }),
+
+    actions: [ new actions.Activable(activables.grandmaShower) ]
+
+  },
+
+  {
     name: 'Old kitchen',
     position: floor.position.add(new pac.Point(848, 79)),
     size: {

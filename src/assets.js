@@ -64,6 +64,10 @@ var textures = {
     path: 'assets/img/granma/granma_kitchen.png',
     atlas: 'assets/img/granma/granma_kitchen.json'
   },
+  'grandma_shower': {
+    path: 'assets/img/granma/grandma_shower.png',
+    atlas: 'assets/img/granma/grandma_shower.json'
+  },
 
   //Dude
   'dude_bed': {

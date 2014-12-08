@@ -30,6 +30,15 @@ module.exports = {
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
+    },
+    grandmaShower: {
+      command: {
+        state: { mind: 0.02, body: 0.02 },
+        animation: 'grandmaShowerOn',
+        duration: 10, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
     }
 
   },

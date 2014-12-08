@@ -9,15 +9,15 @@ var FamilyGirl = module.exports = Character.extend({
   texture: 'familygirl',
 
   animations: new pac.AnimationList(animations.FamilyGirl, {
-    default: 'idleGirl',
+    default: 'idleLeftGirl',
     autoplay: true
   }),
 
   actions: [ new actions.Walker({ velocity: 50 }) ],
 
   walkAnim: {
-    'idleLeft': 'idleGirl',
-    'idleRight': 'idleGirl',
+    'idleLeft': 'idleLeftGirl',
+    'idleRight': 'idleRightGirl',
     'walkLeft': 'walkLeftGirl',
     'walkRight': 'walkRightGirl'
   },

@@ -2,24 +2,12 @@
 module.exports = {
 
   floor1: {
-
-    littleNana: {
-      command: {
-        env: { music: 0.1, tv: 0.1 },
-        state: { mind: -0.01, body: 0.05 },
-        //animation: 'test',
-        duration: 2, // seconds || true for infinite
-        changeInterval: 0.5, // apply state every X seconds
-      },
-      nearness: 50
-    },
-
     tv: {
       command: {
-        env: { tv: 0.1 },
+        env: { garnmaTV: 0.1 },
         state: { mind: 0.05, body: -0.01 },
         animation: 'tvOn',
-        duration: true,
+        duration: 30,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -27,21 +15,18 @@ module.exports = {
 
     bed: {
       command: {
-        env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'bedOn',
-        duration: true,
+        duration: 30,
         changeInterval: 0.5,
       },
       nearness: 50
     },
-
     kitchen: {
       command: {
-        env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'kitchenOn',
-        duration: 120, // seconds
+        duration: 20, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
@@ -50,10 +35,9 @@ module.exports = {
   },
 
   floor2: {
-
     dudeStereo: {
       command: {
-        env: { tv: 0.1 },
+        env: { dudeStereo: 0.1 },
         state: { mind: 0.05, body: -0.01 },
         animation: 'dudeStereoOn',
         duration: true,
@@ -64,10 +48,9 @@ module.exports = {
 
     bedDude: {
       command: {
-        env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'dudeBedOn',
-        duration: true,
+        duration: 60,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -75,7 +58,6 @@ module.exports = {
 
     dudeOven: {
       command: {
-        env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'dudeOvenOn',
         duration: true, // seconds
@@ -83,10 +65,10 @@ module.exports = {
       },
       nearness: 50
     },
-    
+
     dudeShower: {
       command: {
-        env: { tv: 0.1 },
+        env: { dudeShower: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'dudeShowerOn',
         duration: 15, // seconds
@@ -101,7 +83,7 @@ module.exports = {
 
     baby: {
       command: {
-        env: { tv: 0.1 },
+        env: { babyCry: 0.1 },
         state: { mind: 0.05, body: -0.01 },
         animation: 'babyOn',
         duration: true,
@@ -112,10 +94,9 @@ module.exports = {
 
     bedFamily: {
       command: {
-        env: { tv: 0.1 },
-        state: { mind: 0.02, body: 0.05 },
+        state: { mind: 0.1, body: 0.05 },
         animation: 'familyBedOn',
-        duration: true,
+        duration: 30,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -123,7 +104,6 @@ module.exports = {
 
     familyKitchen: {
       command: {
-        env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'familyKitchenOn',
         duration: true, // seconds

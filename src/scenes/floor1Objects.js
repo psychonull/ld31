@@ -6,15 +6,6 @@ var animations = require('../animations/floor1');
 module.exports = function(floor) {
 
   return [{
-
-    name: 'Little GrandMa',
-    position: floor.position.add(new pac.Point(100, 30)),
-    frame: 'idle1',
-    texture: 'some_object',
-    actions: [ new actions.Activable(activables.littleNana) ]
-
-  }, {
-
     name: 'Old TV',
     position: floor.position.add(new pac.Point(488, 50)),
     size: {
@@ -34,7 +25,6 @@ module.exports = function(floor) {
     actions: [ new actions.Activable(activables.tv) ]
 
   }, {
-
     name: 'Old Bed',
     position: floor.position.add(new pac.Point(273, 74)),
     size: {
@@ -55,7 +45,6 @@ module.exports = function(floor) {
     actions: [ new actions.Activable(activables.bed) ]
 
   }, {
-
     name: 'Old kitchen',
     position: floor.position.add(new pac.Point(848, 79)),
     size: {

@@ -5,26 +5,24 @@ function v(mind, body){
 module.exports = {
   floor1: {
     start: { mind: 1, body: 1 },
-    living: v(-3, -1.5),
+    living: v(-1, -2),
 
     env: {
-      tv: v(0, -1.5),
+      dudeTV: v(0, -1.5),
+      familyTV: v(0, -1.5),
       babyCry: v(-3, -1.5),
-      cook: v(-3, -1.5),
-      videogame: v(-3, -1.5),
-      music: v(-2, 0),
+      dudeStereo: v(-75, -75),
+      dudeShower: v(-75, -75)
     }
   },
   floor2: {
     start: { mind: 1, body: 1 },
-    living: v(-1.5, -3),
+    living: v(-3, -1),
 
     env: {
-      tv: v(-3, -1.5),
-      babyCry: v(-3, -1.5),
-      cook: v(-3, -1.5),
-      videogame: v(-3, -1.5),
-      music: v(-3, 1.5),
+      garnmaTV: v(-3, -1.5),
+      familyTV: v(-3, -1.5),
+      babyCry: v(-3, -1.5)
     }
   },
   floor3: {
@@ -32,11 +30,9 @@ module.exports = {
     living: v(-4.5, -1.5),
 
     env: {
-      tv: v(-3, -1.5),
-      babyCry: v(-3, -1.5),
-      cook: v(-3, -1.5),
-      videogame: v(-3, -1.5),
-      music: v(-3, -1.5),
+      garnmaTV: v(-1, -1),
+      dudeTV: v(-3, -3),
+      dudeStereo: v(-75, -75)
     }
   },
 

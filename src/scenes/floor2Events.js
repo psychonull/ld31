@@ -14,6 +14,10 @@ module.exports = function(floor, dude){
         oldWater.visible = true;
         dude.visible  = false;
         break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.loop(true);
+        this.game.sounds.musicaDude.play();
+        break;
     }
   };
 
@@ -29,6 +33,9 @@ module.exports = function(floor, dude){
         var oldWater = this.scene.findOne('Old Water');
         oldWater.visible = false;
         dude.visible = true;
+        break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.stop();
         break;
       case 'Dude Oven':
         var food = this.scene.findOne('Dude Food');

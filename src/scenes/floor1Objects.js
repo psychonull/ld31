@@ -92,7 +92,7 @@ module.exports = function(floor) {
 
   {
     name: 'Old Water',
-    position: floor.position.add(new pac.Point(5, 0)),
+    position: floor.position.add(new pac.Point(5, -1)),
     visible: false,
     size: {
       width: 200,

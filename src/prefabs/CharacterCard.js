@@ -1,4 +1,4 @@
-
+var _ = pac._;
 var popUpContainer = require('./PopUpContainer.js');
 module.exports = pac.Sprite.extend({
 
@@ -16,6 +16,13 @@ module.exports = pac.Sprite.extend({
   mind: 1,
   body: 1,
 
+  mentalDisaster: false,
+  bodyProblems: false,
+  mentalDisasterTextValue: 'WRECKED',
+  bodyProblemsTextValue: 'BROKEN DOWN',
+
+  disabled: false,
+
   popup: {
     title: '',
     content: '',
@@ -28,6 +35,13 @@ module.exports = pac.Sprite.extend({
     this.mind = (options && options.mind) || this.mind;
     this.body = (options && options.body) || this.body;
     this.popup = (options && options.popup) || this.popup;
+
+    this.mentalDisasterTextValue =
+      (options && options.mentalDisasterTextValue) ||
+        this.mentalDisasterTextValue;
+    this.bodyProblemsTextValue =
+      (options && options.bodyProblemsTextValue) ||
+        this.bodyProblemsTextValue;
 
     if(options.avatarFrame){
       this.avatar = new pac.Sprite({
@@ -95,6 +109,28 @@ module.exports = pac.Sprite.extend({
         x: 5,
         y: 160
       }
+    });
+    this.mentalDisasterText = new pac.Text({
+      value: this.mentalDisasterTextValue,
+      font: '10px lucaswhite',
+      isBitmapText: true,
+      wordWrap: this.barWidth,
+      position: {
+        x: 7,
+        y: 135
+      },
+      visible: false
+    }),
+    this.bodyProblemsText = new pac.Text({
+      value: this.bodyProblemsTextValue,
+      font: '10px lucaswhite',
+      isBitmapText: true,
+      wordWrap: this.barWidth,
+      position: {
+        x: 7,
+        y: 175
+      },
+      visible: false
     });
 
     this.mindBar = new pac.Rectangle({
@@ -166,21 +202,70 @@ module.exports = pac.Sprite.extend({
         popUpCont.removeAllListeners('click');
       });
     });
+
+    this.disabledOverlay = new pac.Rectangle({
+      size: _.clone(this.size),
+      position: this.position.clone(),
+      layer: 'overlay',
+      fill: '#000000',
+      alpha: 0.7,
+      zIndex: 100,
+      visible: false
+    });
+
+    //this.children.add(this.disabledOverlay);
+
     this.children.add(this.captionText);
     this.children.add(mentalHealthText);
     this.children.add(physicalHealthText);
     this.children.add(this.mindBar);
     this.children.add(this.bodyBar);
+    this.children.add(this.mentalDisasterText);
+    this.children.add(this.bodyProblemsText);
     this.children.add(this.infoIcon);
 
 
   },
 
   update: function(dt){
-    this.mind = Math.min( Math.max(0, this.mind), 1);
-    this.body = Math.min( Math.max(0, this.body), 1);
-    this.mindBar.size.width = this.mind * this.barWidth;
-    this.bodyBar.size.width = this.body * this.barWidth;
+
+    if(this.mentalDisaster && this.bodyProblems){
+      if(this.disabled){
+        return;
+      }
+      else{
+        this.disabledOverlay.visible = true;
+        this.game.addObject(this.disabledOverlay);
+        this.disabled = true;
+      }
+    }
+
+    if(!this.mentalDisaster){
+      this.mind = Math.min( Math.max(0, this.mind), 1);
+      this.mindBar.size.width = this.mind * this.barWidth;
+      if(this.mind === 0){
+        this.mentalDisaster = true;
+      }
+    }
+    else {
+      this.mindBar.size.width = this.barWidth;
+      this.mindBar.fill = '#FF0000';
+      this.mentalDisasterText.visible = true;
+    }
+
+    if(!this.bodyProblems){
+      this.body = Math.min( Math.max(0, this.body), 1);
+      this.bodyBar.size.width = this.body * this.barWidth;
+      if(this.body === 0){
+        this.bodyProblems = true;
+      }
+    }
+    else {
+      this.bodyBar.size.width = this.barWidth;
+      this.bodyBar.fill = '#FF0000';
+      this.bodyProblemsText.visible = true;
+    }
+
   }
 
 });

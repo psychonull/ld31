@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "dude_oven": {
+      "x": 0,
+      "y": 0,
+      "width": 70,
+      "height": 70
+    },
+    "dude_oven_hover": {
+      "x": 0,
+      "y": 70,
+      "width": 70,
+      "height": 70
+    },
+    "dude_oven_on_0": {
+      "x": 70,
+      "y": 0,
+      "width": 70,
+      "height": 70
+    },
+    "dude_oven_on_1": {
+      "x": 70,
+      "y": 70,
+      "width": 70,
+      "height": 70
+    }
+  }
+}

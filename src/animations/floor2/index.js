@@ -1,5 +1,6 @@
 
 module.exports = {
   bedDude: require('./bedDude'),
-  dudeStereo: require('./dudeStereo')
+  dudeStereo: require('./dudeStereo'),
+  dudeOven: require('./dudeOven')
 };

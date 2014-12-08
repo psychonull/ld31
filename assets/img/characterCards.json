@@ -1,20 +1,20 @@
 {
   "frames": {
     "dude": {
-      "x": 135,
+      "x": 270,
       "y": 0,
       "width": 135,
       "height": 200
     },
     "dude_pic": {
-      "x": 0,
+      "x": 135,
       "y": 200,
       "width": 125,
       "height": 80
     },
     "family": {
       "x": 0,
-      "y": 0,
+      "y": 80,
       "width": 135,
       "height": 200
     },
@@ -25,14 +25,14 @@
       "height": 80
     },
     "granma": {
-      "x": 270,
+      "x": 135,
       "y": 0,
       "width": 135,
       "height": 200
     },
     "granma_pic": {
-      "x": 125,
-      "y": 200,
+      "x": 0,
+      "y": 0,
       "width": 125,
       "height": 80
     }

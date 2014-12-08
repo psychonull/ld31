@@ -90,7 +90,7 @@ module.exports = function(floor) {
     actions: [ new actions.Activable(activables.kitchen) ]
   }, {
     name: 'Old Water',
-    position: floor.position.add(new pac.Point(5, 0)),
+    position: floor.position.add(new pac.Point(5, -1)),
     visible: false,
     size: {
       width: 200,

@@ -24,6 +24,25 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.bedFamily) ]
+    },
+    {
+      name: 'Baby',
+      position: floor.position.add(new pac.Point(355, 73)),
+      size: {
+        width: 110,
+        height: 110
+      },
+      floor: 3,
+      frame: 'baby',
+      texture: 'baby',
+
+      frameHover: 'baby_hover',
+
+      animations: new pac.AnimationList(animations.baby, {
+        default: 'babyOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.baby) ]
     }
   ];
 };

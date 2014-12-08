@@ -1,4 +1,5 @@
 
 module.exports = {
-  bedFamily: require('./bedFamily')
+  bedFamily: require('./bedFamily'),
+  baby: require('./baby')
 };

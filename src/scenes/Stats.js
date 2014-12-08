@@ -8,9 +8,9 @@ module.exports = {
     living: v(-2, -5),
 
     env: {
-      familyTV: v(0, -1),
-      babyCry: v(-3, -1.5),
-      dudeStereo: v(-120, -35),
+      familyTV: v(-1, 0),
+      babyCry: v(-2, 0),
+      dudeStereo: v(-10, -35),
       dudeShower: v(-75, -75)
     }
   },
@@ -26,7 +26,7 @@ module.exports = {
   },
   floor3: {
     start: { mind: 1, body: 1 },
-    living: v(-500, -1.5),
+    living: v(-1, -1),
 
     env: {
       garnmaTV: v(-1, -1),

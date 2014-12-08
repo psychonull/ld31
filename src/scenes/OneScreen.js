@@ -1,7 +1,8 @@
 var pac = require('../../../pac/src/');
 var _ = pac._;
-
 var prefabs = require('../prefabs');
+var stats = require('./Stats');
+var howler = require('../../node_modules/howler');
 
 var OneScreen = pac.Scene.extend({
 
@@ -39,8 +40,53 @@ var OneScreen = pac.Scene.extend({
       env: stats.floor3.env,
       position: new pac.Point(x, 12)
     });
+    this.muteText = new pac.Text({
+      zIndex: 1000,
+      layer: 'overlay',
+      value: 'Sound: ON',
+      font: '10px lucaswhite',
+      isBitmapText: true,
+      wordWrap: 130,
+      position: {
+        x: 825,
+        y: 15
+      },
+      actions: [ new pac.actions.Clickable()],
+        shape: new pac.Rectangle({
+          fill: '#4f4f4f', 
+          size: {
+          width: 100,
+          height: 20
+        } })
+    });
 
-    this.addObject([ this.floor1, this.floor2, this.floor3 ]);
+    this.menuBackGround = new pac.Rectangle({
+      layer: 'overlay',
+      zIndex: 1,
+      position: {
+        x: 820,
+        y: 10
+      },
+      fill: '#000000', 
+      size: {
+        width: 102,
+        height: 25
+      } 
+    });
+
+    this.muteText.on('click', function(){
+      console.log('MUTEEE');
+      if(this.value.indexOf('ON') > -1){
+        howler.Howler.mute();
+        this.value = this.value.replace('ON', 'OFF');
+      }
+      else{ 
+        howler.Howler.unmute();
+        this.value = this.value.replace('OFF', 'ON');
+      }
+    });
+
+    this.addObject([ this.floor1, this.floor2, this.floor3, this.menuBackGround, this.muteText ]);
 
     require('./Floor1')(this.floor1, this);
     require('./Floor2')(this.floor2, this);

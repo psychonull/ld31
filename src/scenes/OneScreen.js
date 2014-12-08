@@ -1,8 +1,6 @@
 var pac = require('../../../pac/src/');
 var _ = pac._;
-
 var prefabs = require('../prefabs');
-
 var stats = require('./Stats');
 var howler = require('../../node_modules/howler');
 
@@ -16,7 +14,7 @@ var OneScreen = pac.Scene.extend({
   },
 
   onEnter: function(scene){
-
+    var stats = this.game.stats;
     var x = 13;
 
     this.floor1 = new (prefabs.Floor(stats.floor1, stats.livingTime))({

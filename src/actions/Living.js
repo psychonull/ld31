@@ -4,7 +4,8 @@ module.exports = pac.Action.extend({
   name: 'Living',
 
   init: function(lose, time) {
-    this.lose = pac._.clone(lose);
+    //this.lose = pac._.clone(lose);
+    this.lose = lose;
     this.time = time;
 
     this.elapsed = 0;

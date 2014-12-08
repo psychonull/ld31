@@ -46,4 +46,12 @@ module.exports = function(floor, dude){
     }
   };
 
+  floor.onLostMind = function(){
+    console.log('granma lostMInd');
+  };
+
+  floor.onLostBody = function(){
+    console.log('granma lostBody');
+  };
+
 };

@@ -5,7 +5,7 @@ function v(mind, body){
 module.exports = {
   floor1: {
     start: { mind: 1, body: 1 },
-    living: v(-1, -2),
+    living: v(-100, -5),
 
     env: {      
       familyTV: v(-1, 0),

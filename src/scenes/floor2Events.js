@@ -2,17 +2,16 @@
 module.exports = function(floor, dude){
 
   floor.onActivateObject = function(obj){
-    console.log('onActivateObject > ' + obj.name);
+    //console.log('onActivateObject > ' + obj.name);
 
     switch(obj.name){
       case 'Dude Bed':
-        dude.visible = false;
-        dude.active = false;
+        dude.visible = dude.active = false;
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
         oldWater.visible = true;
-        dude.visible  = false;
+        dude.visible = dude.active = false;
         break;
       case 'Dude Stereo':
         this.game.sounds.musicaDude.loop(true);
@@ -22,29 +21,26 @@ module.exports = function(floor, dude){
   };
 
   floor.onDeactivateObject = function(obj){
-    console.log('onDeactivateObject > ' + obj.name);
+    //console.log('onDeactivateObject > ' + obj.name);
 
     switch(obj.name){
       case 'Dude Bed':
-        dude.visible = true; 
-        dude.active = true;       
+        dude.visible = dude.active = true;
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
         oldWater.visible = false;
-        dude.visible = true;
+        dude.visible = dude.active = true;
         break;
       case 'Dude Stereo':
         this.game.sounds.musicaDude.stop();
         break;
       case 'Dude Oven':
         var food = this.scene.findOne('Dude Food');
-        food.visible = true;
-        food.active = true;
+        food.visible = food.active = true;
         break;
       case 'Dude Food':
-        obj.visible = false;
-        obj.active = false;
+        obj.active = obj.visible = dude.active = false;
         break;
     }
   };

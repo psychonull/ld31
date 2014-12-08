@@ -1,3 +1,5 @@
+var _ = pac._,
+  actions = require('../actions');
 
 module.exports = function(floor, dude){
 
@@ -46,7 +48,32 @@ module.exports = function(floor, dude){
   };
 
   floor.onLostMind = function(){
-    console.log('granma lostMInd');
+    this.game.sounds.personaHablando1.play();
+    var that = this;
+    dude.actions.pushBack(new pac.actions.Speak({
+      text: _.sample(['This place sucks.', 'STOOOOOPPP!!!!!']),
+      duration: 1,
+      isBlocking: true,
+      minDuration: 1,
+      after: function(){
+        dude.actions.pushBack(new pac.actions.Speak({
+          text: 'I just wanna leave this place.',
+          duration: 2,
+          isBlocking: true,
+          minDuration: 2,
+          after: function(){
+            that.game.sounds.personaHablando1.stop();
+          }
+        }));
+      }
+    }));
+
+    floor.actions.each(function(action){
+      if (action instanceof actions.Living){
+        action.lose.body *= 2;
+      }
+    });
+
   };
 
   floor.onLostBody = function(){

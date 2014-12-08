@@ -1,4 +1,4 @@
-
+var _ = pac._;
 var actions = require('../actions');
 var activables = require('./activables').floor3;
 module.exports = function(floor, boy, girl){
@@ -13,7 +13,7 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
-        boy.visible = false;
+        floor.getWalker(obj.position).visible = false;
         dudeWater.visible = true;
         break;
     }
@@ -29,7 +29,7 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
-        boy.visible = true;
+        floor.getWalker(obj.position).visible = true;
         dudeWater.visible = false;
         break;
       case 'Baby':
@@ -84,7 +84,31 @@ module.exports = function(floor, boy, girl){
   };
 
   floor.onLostMind = function(){
-    console.log('granma lostMInd');
+    var say = function(c, t, d, a){
+      return function(){
+        c.actions.pushBack(new pac.actions.Speak({
+          text: _.sample(t),
+          duration: d,
+          isBlocking: true,
+          minDuration: d,
+          after: a
+        }));
+      };
+    };
+
+    var isBoy = _.random(0,1);
+
+
+    say(isBoy ? boy : girl, ['We should break up.', 'I\'M DONE. I\'m leaving'], 2,
+      say(!isBoy ? boy : girl, ['ITS ALL YOUR FAULT', 'Let\'s do this for the kids'], 1.5,
+        say(isBoy ? boy : girl, ['yeah sure.'], 1, function(){
+          floor.walkers.remove(isBoy ? boy : girl);
+          floor.scene.removeObject(isBoy ? boy : girl);
+        })
+      )
+    )();
+
+
   };
 
   floor.onLostBody = function(){

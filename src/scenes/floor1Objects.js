@@ -2,7 +2,7 @@
 var actions = require('../actions');
 var activables = require('./activables').floor1;
 var animations = require('../animations/floor1');
-
+var water = require('../animations');
 module.exports = function(floor) {
 
   return [{
@@ -88,8 +88,25 @@ module.exports = function(floor) {
     }),
 
     actions: [ new actions.Activable(activables.kitchen) ]
+  },
+  {
+    name: 'Old Water',
+    position: floor.position.add(new pac.Point(5, 0)),
+    visible: false,
+    size: {
+      width: 200,
+      height: 200
+    },
+    floor: 1,
+    frame: 'water_on_0',
+    texture: 'dude_water',
 
-  }];
+    animations: new pac.AnimationList(water.Water, {
+      default: 'waterOn',
+      autoplay: true
+    })
+  }
+  ];
 
 
 };

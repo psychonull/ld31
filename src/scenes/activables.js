@@ -88,11 +88,11 @@ module.exports = {
 
   floor3: {
 
-    tv: {
+    baby: {
       command: {
         env: { tv: 0.1 },
         state: { mind: 0.05, body: -0.01 },
-        animation: 'tvOn',
+        animation: 'babyOn',
         duration: true,
         changeInterval: 0.5,
       },

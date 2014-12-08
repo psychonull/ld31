@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "baby": {
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 100
+    },
+    "baby_hover": {
+      "x": 0,
+      "y": 100,
+      "width": 100,
+      "height": 100
+    },
+    "baby_on_0": {
+      "x": 100,
+      "y": 0,
+      "width": 100,
+      "height": 100
+    },
+    "baby_on_1": {
+      "x": 100,
+      "y": 100,
+      "width": 100,
+      "height": 100
+    }
+  }
+}

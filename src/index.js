@@ -20,7 +20,7 @@ game.use('renderer', pac.PixiRenderer, {
   backgroundColor: '#00FF00',
   size: gameSize,
   scale: gameScale,
-  layers: ['background', 'objects', 'front', 'gui'],
+  layers: ['background', 'objects', 'front', 'gui', 'overlay'],
 });
 
 game.use('input', pac.MouseInput, {

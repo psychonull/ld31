@@ -17,7 +17,7 @@ var OneScreen = pac.Scene.extend({
 
     var x = 13;
 
-    var floor1 = new (prefabs.Floor(stats.floor1, stats.livingTime))({
+    this.floor1 = new (prefabs.Floor(stats.floor1, stats.livingTime))({
       floor: 1,
       name: 'floor1',
       stats: stats.floor1.start,
@@ -25,7 +25,7 @@ var OneScreen = pac.Scene.extend({
       position: new pac.Point(x, 407),
     });
 
-    var floor2 = new (prefabs.Floor(stats.floor2, stats.livingTime))({
+    this.floor2 = new (prefabs.Floor(stats.floor2, stats.livingTime))({
       floor: 2,
       name: 'floor2',
       stats: stats.floor2.start,
@@ -33,7 +33,7 @@ var OneScreen = pac.Scene.extend({
       position: new pac.Point(x, 208)
     });
 
-    var floor3 = new (prefabs.Floor(stats.floor3, stats.livingTime))({
+    this.floor3 = new (prefabs.Floor(stats.floor3, stats.livingTime))({
       floor: 3,
       name: 'floor3',
       stats: stats.floor3.start,
@@ -41,11 +41,11 @@ var OneScreen = pac.Scene.extend({
       position: new pac.Point(x, 12)
     });
 
-    this.addObject([ floor1, floor2, floor3 ]);
+    this.addObject([ this.floor1, this.floor2, this.floor3 ]);
 
-    require('./Floor1')(floor1, this);
-    require('./Floor2')(floor2, this);
-    require('./Floor3')(floor3, this);
+    require('./Floor1')(this.floor1, this);
+    require('./Floor2')(this.floor2, this);
+    require('./Floor3')(this.floor3, this);
   },
 
   onExit: function(scene){
@@ -53,7 +53,15 @@ var OneScreen = pac.Scene.extend({
   },
 
   update: function(dt){
-
+    if(this.game.familyCard.disabled && !this.floor3.disabled){
+      this.floor3.disable();
+    }
+    if(this.game.dudeCard.disabled && !this.floor2.disabled){
+      this.floor2.disable();
+    }
+    if(this.game.granmaCard.disabled && !this.floor1.disabled){
+      this.floor1.disable();
+    }
   }
 });
 

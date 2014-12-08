@@ -1,0 +1,16 @@
+{
+  "frames": {
+    "familyFood": {
+      "x": 0,
+      "y": 0,
+      "width": 60,
+      "height": 15
+    },
+    "familyFood_hover": {
+      "x": 60,
+      "y": 0,
+      "width": 60,
+      "height": 15
+    }
+  }
+}

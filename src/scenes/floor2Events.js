@@ -28,6 +28,15 @@ module.exports = function(floor, dude){
         oldWater.visible = false;
         dude.visible = true;
         break;
+      case 'Dude Oven':
+        var food = this.scene.findOne('Dude Food');
+        food.visible = true;
+        food.active = true;
+        break;
+      case 'Dude Food':
+        obj.visible = false;
+        obj.active = false;
+        break;
     }
   };
 

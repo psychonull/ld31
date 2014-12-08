@@ -102,6 +102,28 @@ module.exports = function(floor) {
         default: 'waterOn',
         autoplay: true
       })
+    },
+
+    {
+    name: 'Dude Food',
+    position: floor.position.add(new pac.Point(371, 88)),
+    size: {
+      width: 34,
+      height: 19
+    },
+    frame: 'dudeFood',
+    texture: 'dude_food',
+
+    visible: false,
+    active: false,
+    floor: 2,
+    frameHover: 'dudeFood_hover',
+    caption: ['Eat food'],
+
+    captionOffset: new pac.Point(-20, -20),    
+
+    actions: [ new actions.Activable(activables.dudeFood) ]
     }
+  
   ];
 };

@@ -88,7 +88,9 @@ module.exports = function(floor) {
     }),
 
     actions: [ new actions.Activable(activables.kitchen) ]
-  }, {
+  },
+
+  {
     name: 'Old Water',
     position: floor.position.add(new pac.Point(5, 0)),
     visible: false,
@@ -103,7 +105,9 @@ module.exports = function(floor) {
       default: 'waterOn',
       autoplay: true
     })
-  }, {
+  }, 
+
+  {
     name: 'Grandma Food',
     position: floor.position.add(new pac.Point(802, 122)),
     size: {

@@ -43,6 +43,25 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.baby) ]
+    },
+    {
+      name: 'Family Kitchen',
+      position: floor.position.add(new pac.Point(615, 73)),
+      size: {
+        width: 57,
+        height: 105
+      },
+      floor: 3,
+      frame: 'family_kitchen',
+      texture: 'family_kitchen',
+
+      frameHover: 'family_kitchen_hover',
+
+      animations: new pac.AnimationList(animations.familyKitchen, {
+        default: 'familyKitchenOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.familyKitchen) ]
     }
   ];
 };

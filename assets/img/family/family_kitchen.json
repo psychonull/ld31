@@ -1,0 +1,34 @@
+{
+  "frames": {
+    "family_kitchen": {
+      "x": 0,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "family_kitchen_hover": {
+      "x": 57,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "family_kitchen_on_0": {
+      "x": 114,
+      "y": 0,
+      "width": 57,
+      "height": 105
+    },
+    "family_kitchen_on_1": {
+      "x": 0,
+      "y": 105,
+      "width": 57,
+      "height": 105
+    },
+    "family_kitchen_on_2": {
+      "x": 57,
+      "y": 105,
+      "width": 57,
+      "height": 105
+    }
+  }
+}

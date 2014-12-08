@@ -46,6 +46,7 @@ module.exports = function(floor) {
 
     frameHover: 'cama_hover',
 
+    captionOffset: new pac.Point(20, 20),
     animations: new pac.AnimationList(animations.bed, {
       default: 'bedOff',
       autoplay: false
@@ -66,6 +67,7 @@ module.exports = function(floor) {
 
     frameHover: 'cocina_hover',
 
+    captionOffset: new pac.Point(-20, 10),
     animations: new pac.AnimationList(animations.kitchen, {
       default: 'kitchenOff',
       autoplay: false

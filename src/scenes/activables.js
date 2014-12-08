@@ -78,7 +78,7 @@ module.exports = {
         env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
         animation: 'dudeOvenOn',
-        duration: 120, // seconds
+        duration: true, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50

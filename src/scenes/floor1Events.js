@@ -11,6 +11,10 @@ module.exports = function(floor, granMa){
       case 'Old Shower':
         granMa.visible = false;
         break;
+      case 'Grandma Broom':
+        granMa.visible = false;
+        obj.position = floor.position.add(new pac.Point(640, -20));
+        break;
     }
   };
 
@@ -23,6 +27,10 @@ module.exports = function(floor, granMa){
         break;
       case 'Old Shower':
         granMa.visible = true;
+        break;
+      case 'Grandma Broom':
+        granMa.visible = true;
+        obj.position = floor.position.add(new pac.Point(675, 22));
         break;
     }
   };

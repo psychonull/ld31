@@ -44,7 +44,7 @@ module.exports = function(floor) {
 
     actions: [ new actions.Activable(activables.bed) ]
 
-  }, 
+  },
 
   {
     name: 'Old Shower',
@@ -119,9 +119,31 @@ module.exports = function(floor) {
     frameHover: 'granmaFood_hover',
     caption: ['Eat food'],
 
-    captionOffset: new pac.Point(-20, -20),    
+    captionOffset: new pac.Point(-20, -20),
 
     actions: [ new actions.Activable(activables.grandmaFood) ]
+
+  }, {
+    name: 'Grandma Broom',
+    position: floor.position.add(new pac.Point(675, 22)),
+    size: {
+      width: 70,
+      height: 160
+    },
+    frame: 'grandma_broom',
+    texture: 'grandma_broom',
+
+    frameHover: 'grandma_broom_hover',
+    caption: ['Knock the roof'],
+
+    captionOffset: new pac.Point(-20, -20),
+
+    animations: new pac.AnimationList(animations.grandmaBroom, {
+      default: 'grandmaBroomOff',
+      autoplay: true
+    }),
+
+    actions: [ new actions.Activable(activables.grandmaBroom) ]
 
   }];
 

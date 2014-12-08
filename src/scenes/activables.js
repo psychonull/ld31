@@ -35,7 +35,7 @@ module.exports = {
 
     grandmaFood: {
       command: {
-        state: { mind: 0.001, body: 0.1 },        
+        state: { mind: 0.001, body: 0.1 },
         duration: 1, // seconds
         changeInterval: 1, // apply state every X seconds
       },
@@ -46,6 +46,16 @@ module.exports = {
       command: {
         state: { mind: 0.02, body: 0.02 },
         animation: 'grandmaShowerOn',
+        duration: 10, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
+    },
+
+    grandmaBroom: {
+      command: {
+        state: { mind: 0.02, body: 0.02 },
+        animation: 'grandmaBroomOn',
         duration: 10, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },

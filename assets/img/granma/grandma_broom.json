@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "grandma_broom": {
+      "x": 0,
+      "y": 0,
+      "width": 70,
+      "height": 160
+    },
+    "grandma_broom_hover": {
+      "x": 0,
+      "y": 160,
+      "width": 70,
+      "height": 160
+    },
+    "grandma_broom_on_0": {
+      "x": 70,
+      "y": 0,
+      "width": 70,
+      "height": 160
+    },
+    "grandma_broom_on_1": {
+      "x": 70,
+      "y": 160,
+      "width": 70,
+      "height": 160
+    }
+  }
+}

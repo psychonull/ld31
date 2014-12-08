@@ -62,6 +62,25 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.familyKitchen) ]
+    },
+    {
+      name: 'Family Shower',
+      position: floor.position.add(new pac.Point(-7, 7)),
+      size: {
+        width: 100,
+        height: 175
+      },
+      floor: 3,
+      frame: 'family_shower',
+      texture: 'family_shower',
+
+      frameHover: 'family_shower_hover',
+
+      animations: new pac.AnimationList(animations.familyShower, {
+        default: 'familyShowerOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.familyShower) ]
     }
   ];
 };

@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "family_shower": {
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 175
+    },
+    "family_shower_hover": {
+      "x": 0,
+      "y": 175,
+      "width": 100,
+      "height": 175
+    },
+    "family_shower_on_0": {
+      "x": 100,
+      "y": 0,
+      "width": 100,
+      "height": 175
+    },
+    "family_shower_on_1": {
+      "x": 100,
+      "y": 175,
+      "width": 100,
+      "height": 175
+    }
+  }
+}

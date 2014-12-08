@@ -22,16 +22,35 @@ module.exports = {
       },
       nearness: 50
     },
+
     kitchen: {
       command: {
-        state: { mind: 0.02, body: 0.02 },
+        state: { mind: 0.02, body: -0.003 },
         animation: 'kitchenOn',
+        duration: 8, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
+    },
+
+    grandmaFood: {
+      command: {
+        state: { mind: 0.001, body: 0.1 },        
+        duration: 1, // seconds
+        changeInterval: 1, // apply state every X seconds
+      },
+       nearness: 50
+    },
+
+    grandmaShower: {
+      command: {
+        state: { mind: 0.02, body: 0.02 },
+        animation: 'grandmaShowerOn',
         duration: 10, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
     }
-
   },
 
   floor2: {

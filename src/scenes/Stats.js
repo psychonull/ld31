@@ -7,11 +7,10 @@ module.exports = {
     start: { mind: 1, body: 1 },
     living: v(-1, -2),
 
-    env: {
-      dudeTV: v(0, -1.5),
-      familyTV: v(0, -1.5),
+    env: {      
+      familyTV: v(0, -1),
       babyCry: v(-3, -1.5),
-      dudeStereo: v(-75, -75),
+      dudeStereo: v(-120, -35),
       dudeShower: v(-75, -75)
     }
   },
@@ -36,5 +35,5 @@ module.exports = {
     }
   },
 
-  livingTime: 0.1 //seconds
+  livingTime: 1 //seconds
 };

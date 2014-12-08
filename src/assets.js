@@ -95,6 +95,10 @@ var textures = {
   'family_kitchen': {
     path: 'assets/img/family/family_kitchen.png',
     atlas: 'assets/img/family/family_kitchen.json'
+  },
+  'family_shower': {
+    path: 'assets/img/family/family_shower.png',
+    atlas: 'assets/img/family/family_shower.json'
   }
 
 };

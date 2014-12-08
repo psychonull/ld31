@@ -2,5 +2,6 @@
 module.exports = {
   bedFamily: require('./bedFamily'),
   baby: require('./baby'),
-  familyKitchen: require('./familyKitchen')
+  familyKitchen: require('./familyKitchen'),
+  familyShower: require('./familyShower')
 };

@@ -9,6 +9,14 @@ module.exports = function(floor, boy, girl){
         boy.visible = false;
         girl.visible = false;
         break;
+      case 'Family Shower':
+        var random = Math.round(Math.random() * 10);
+        console.log(random);
+        if(random < 5)
+          boy.visible = false;
+        else
+          girl.visible = false;
+        break;
     }
   };
 
@@ -17,6 +25,10 @@ module.exports = function(floor, boy, girl){
 
     switch(obj.name){
       case 'Family Bed':
+        boy.visible = true;
+        girl.visible = true;
+        break;
+      case 'Family Shower':
         boy.visible = true;
         girl.visible = true;
         break;

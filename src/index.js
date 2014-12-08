@@ -43,6 +43,8 @@ game.loader.on('complete', function(){
 
 game.on('ready', require('./createGameObjects.js'));
 
+game.sounds = require('./soundManager.js');
+
 if (pac.DEBUG){
   window.addEventListener('load', function(){
     require('./editor')(game);

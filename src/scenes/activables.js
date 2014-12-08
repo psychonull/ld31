@@ -51,11 +51,11 @@ module.exports = {
 
   floor2: {
 
-    tv: {
+    dudeStereo: {
       command: {
         env: { tv: 0.1 },
         state: { mind: 0.05, body: -0.01 },
-        animation: 'tvOn',
+        animation: 'dudeStereoOn',
         duration: true,
         changeInterval: 0.5,
       },

@@ -70,6 +70,11 @@ var textures = {
     path: 'assets/img/dude/dude_bed.png',
     atlas: 'assets/img/dude/dude_bed.json'
   },
+  'dude_stereo': {
+    path: 'assets/img/dude/dude_stereo.png',
+    atlas: 'assets/img/dude/dude_stereo.json'
+  },
+
 
   //family
   'family_bed': {

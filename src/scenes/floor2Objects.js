@@ -38,6 +38,7 @@ module.exports = function(floor) {
       texture: 'dude_stereo',
 
       frameHover: 'dude_stereo_hover',
+      captionOffset: new pac.Point(15, 25),
 
       animations: new pac.AnimationList(animations.dudeStereo, {
         default: 'dudeStereoOff',
@@ -57,6 +58,7 @@ module.exports = function(floor) {
       texture: 'dude_oven',
 
       frameHover: 'dude_oven_hover',
+      captionOffset: new pac.Point(0, 20),
 
       animations: new pac.AnimationList(animations.dudeOven, {
         default: 'dudeOvenOff',

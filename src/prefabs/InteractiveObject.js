@@ -15,6 +15,7 @@ var InteractiveObject = pac.Sprite.extend({
   actions: [],
 
   init: function(options){
+    this.floor = (options && options.floor) || this.floor;
     this.frameHover = (options && options.frameHover) || this.frameHover;
 
     if (this.frameHover && this.texture){

@@ -1,5 +1,7 @@
 
 var prefabs = require('../prefabs');
+var actions = require('../actions');
+var InteractiveObject = require('../prefabs/InteractiveObject.js');
 
 module.exports = function(floor, scene){
 
@@ -14,7 +16,6 @@ module.exports = function(floor, scene){
   });
 
   var pos = boy.shape.getBounds().getFeet();
-
   boy.position = floorFeet.subtract(pos);
 
   girl.position = floorFeet.subtract(pos);
@@ -23,5 +24,10 @@ module.exports = function(floor, scene){
   scene.addObject(boy);
   scene.addObject(girl);
 
-  require('./floor3Events')(floor);
+  var objects = require('./floor3Objects')(floor);
+  objects.forEach(function(obj) {
+    scene.addObject(new InteractiveObject(obj));
+  });
+
+  require('./floor3Events')(floor, boy, girl);
 };

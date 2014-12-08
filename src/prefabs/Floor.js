@@ -20,6 +20,7 @@ module.exports = function(stats, livingTime){
     start: null,
     env: null,
     floor: 0,
+    disabled: false,
 
     init: function(options){
       this.walkers = new pac.List();
@@ -45,6 +46,22 @@ module.exports = function(stats, livingTime){
           break;
       }
 
+    },
+
+    disable: function(){
+      this.scene.objects.find({floor: this.floor}).each(function(o){
+        o.active = false;
+      });
+      this.walkers.each(function(w){ w.visible = false; });
+      var rect = new pac.Rectangle({
+        size: pac._.clone(floorSize),
+        position: this.position.clone(),
+        layer: 'overlay',
+        fill: '#000000',
+        alpha: 0.7
+      });
+      this.game.addObject(rect);
+      this.disabled = true;
     },
 
     getWalker: function(toPos){

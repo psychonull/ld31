@@ -32,7 +32,7 @@ module.exports = function(floor, boy, girl){
         boy.visible = true;
         dudeWater.visible = false;
         break;
-      case 'Baby':
+      //case 'Baby':
         /*var delay = Math.round(Math.random() * 10);
         obj.actions.pushFront(new pac.actions.Delay(delay));
         obj.actions.pushFront(
@@ -44,6 +44,15 @@ module.exports = function(floor, boy, girl){
                   })
         );
         obj.actions.pushFront(new actions.Activable(activables.babySleep));*/
+        //break;
+      case 'Family Kitchen':
+        var food = this.scene.findOne('Family Food');
+        food.visible = true;
+        food.active = true;
+        break;
+      case 'Family Food':
+        obj.visible = false;
+        obj.active = false;
         break;
     }
   };

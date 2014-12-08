@@ -35,7 +35,15 @@ module.exports = function(floor, dude){
       case 'Dude Stereo':
         this.game.sounds.musicaDude.stop();
         break;
-        
+      case 'Dude Oven':
+        var food = this.scene.findOne('Dude Food');
+        food.visible = true;
+        food.active = true;
+        break;
+      case 'Dude Food':
+        obj.visible = false;
+        obj.active = false;
+        break;
     }
   };
 

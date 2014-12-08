@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "dude_stereo": {
+      "x": 0,
+      "y": 0,
+      "width": 200,
+      "height": 200
+    },
+    "dude_stereo_hover": {
+      "x": 0,
+      "y": 200,
+      "width": 200,
+      "height": 200
+    },
+    "dude_stereo_on_0": {
+      "x": 200,
+      "y": 0,
+      "width": 200,
+      "height": 200
+    },
+    "dude_stereo_on_1": {
+      "x": 200,
+      "y": 200,
+      "width": 200,
+      "height": 200
+    }
+  }
+}

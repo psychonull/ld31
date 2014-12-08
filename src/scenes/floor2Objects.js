@@ -25,6 +25,44 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.bedDude) ]
+    },
+    {
+      name: 'Dude Stereo',
+      position: floor.position.add(new pac.Point(711, -17)),
+      size: {
+        width: 200,
+        height: 200
+      },
+      floor: 2,
+      frame: 'dude_stereo',
+      texture: 'dude_stereo',
+
+      frameHover: 'dude_stereo_hover',
+
+      animations: new pac.AnimationList(animations.dudeStereo, {
+        default: 'dudeStereoOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.dudeStereo) ]
+    },
+    {
+      name: 'Dude Oven',
+      position: floor.position.add(new pac.Point(271, 48)),
+      size: {
+        width: 70,
+        height: 70
+      },
+      floor: 2,
+      frame: 'dude_oven',
+      texture: 'dude_oven',
+
+      frameHover: 'dude_oven_hover',
+
+      animations: new pac.AnimationList(animations.dudeOven, {
+        default: 'dudeOvenOff',
+        autoplay: false
+      }),
+      actions: [ new actions.Activable(activables.dudeOven) ]
     }
   ];
 };

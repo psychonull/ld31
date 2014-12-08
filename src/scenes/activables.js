@@ -51,11 +51,11 @@ module.exports = {
 
   floor2: {
 
-    tv: {
+    dudeStereo: {
       command: {
         env: { tv: 0.1 },
         state: { mind: 0.05, body: -0.01 },
-        animation: 'tvOn',
+        animation: 'dudeStereoOn',
         duration: true,
         changeInterval: 0.5,
       },
@@ -73,11 +73,11 @@ module.exports = {
       nearness: 50
     },
 
-    kitchen: {
+    dudeOven: {
       command: {
         env: { tv: 0.1 },
         state: { mind: 0.02, body: 0.05 },
-        animation: 'kitchenOn',
+        animation: 'dudeOvenOn',
         duration: 120, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },

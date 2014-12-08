@@ -1,0 +1,28 @@
+{
+  "frames": {
+    "grandma_shower": {
+      "x": 0,
+      "y": 0,
+      "width": 90,
+      "height": 160
+    },
+    "grandma_shower_hover": {
+      "x": 0,
+      "y": 160,
+      "width": 90,
+      "height": 160
+    },
+    "grandma_shower_on_0": {
+      "x": 90,
+      "y": 0,
+      "width": 90,
+      "height": 160
+    },
+    "grandma_shower_on_1": {
+      "x": 90,
+      "y": 160,
+      "width": 90,
+      "height": 160
+    }
+  }
+}

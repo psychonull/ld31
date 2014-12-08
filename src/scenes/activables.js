@@ -22,6 +22,7 @@ module.exports = {
       },
       nearness: 50
     },
+
     kitchen: {
       command: {
         state: { mind: 0.02, body: -0.003 },
@@ -31,15 +32,25 @@ module.exports = {
       },
       nearness: 50
     },
+
     grandmaFood: {
       command: {
         state: { mind: 0.001, body: 0.1 },        
         duration: 1, // seconds
         changeInterval: 1, // apply state every X seconds
       },
+       nearness: 50
+    },
+
+    grandmaShower: {
+      command: {
+        state: { mind: 0.02, body: 0.02 },
+        animation: 'grandmaShowerOn',
+        duration: 10, // seconds
+        changeInterval: 0.5, // apply state every X seconds
+      },
       nearness: 50
     }
-
   },
 
   floor2: {
@@ -95,6 +106,15 @@ module.exports = {
         state: { mind: 0.05, body: -0.01 },
         animation: 'babyOn',
         duration: true,
+        changeInterval: 0.5,
+      },
+      nearness: 50
+    },
+    babySleep: {
+      command: {
+        state: { mind: 0.05, body: -0.01 },
+        animation: 'babyoff',
+        duration: 3,
         changeInterval: 0.5,
       },
       nearness: 50

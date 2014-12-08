@@ -9,6 +9,8 @@ module.exports = function(floor, dude){
         dude.visible = false;
         break;
       case 'Dude Shower':
+        var oldWater = this.scene.findOne('Old Water');
+        oldWater.visible = true;
         dude.visible  = false;
         break;
     }
@@ -22,6 +24,8 @@ module.exports = function(floor, dude){
         dude.visible = true;
         break;
       case 'Dude Shower':
+        var oldWater = this.scene.findOne('Old Water');
+        oldWater.visible = false;
         dude.visible = true;
         break;
     }

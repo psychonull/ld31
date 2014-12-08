@@ -2,6 +2,7 @@
 var actions = require('../actions');
 var activables = require('./activables').floor2;
 var animations = require('../animations/floor2');
+var water = require('../animations');
 
 module.exports = function(floor) {
 
@@ -84,6 +85,23 @@ module.exports = function(floor) {
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.dudeShower) ]
+    },
+    {
+      name: 'Dude Water',
+      position: floor.position.add(new pac.Point(5, 0)),
+      visible: false,
+      size: {
+        width: 200,
+        height: 200
+      },
+      floor: 2,
+      frame: 'water_on_0',
+      texture: 'dude_water',
+
+      animations: new pac.AnimationList(water.Water, {
+        default: 'waterOn',
+        autoplay: true
+      })
     }
   ];
 };

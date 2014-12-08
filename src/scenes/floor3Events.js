@@ -1,4 +1,6 @@
 
+var actions = require('../actions');
+var activables = require('./activables').floor3;
 module.exports = function(floor, boy, girl){
 
   floor.onActivateObject = function(obj){
@@ -10,7 +12,9 @@ module.exports = function(floor, boy, girl){
         girl.visible = false;
         break;
       case 'Family Shower':
-          boy.visible = false;
+        var dudeWater = this.scene.findOne('Dude Water');
+        boy.visible = false;
+        dudeWater.visible = true;
         break;
     }
   };
@@ -24,7 +28,22 @@ module.exports = function(floor, boy, girl){
         girl.visible = true;
         break;
       case 'Family Shower':
+        var dudeWater = this.scene.findOne('Dude Water');
         boy.visible = true;
+        dudeWater.visible = false;
+        break;
+      case 'Baby':
+        /*var delay = Math.round(Math.random() * 10);
+        obj.actions.pushFront(new pac.actions.Delay(delay));
+        obj.actions.pushFront(
+          new pac.actions.Execute(function (dt, action) {
+                    var command = new actions.Command(activables.baby.command);
+                    
+                    this.actions.pushFront(command);
+                    return true;
+                  })
+        );
+        obj.actions.pushFront(new actions.Activable(activables.babySleep));*/
         break;
     }
   };

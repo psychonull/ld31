@@ -7,11 +7,16 @@ module.exports = function(floor, dude){
     switch(obj.name){
       case 'Dude Bed':
         dude.visible = false;
+        dude.active = false;
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
         oldWater.visible = true;
         dude.visible  = false;
+        break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.loop(true);
+        this.game.sounds.musicaDude.play();
         break;
     }
   };
@@ -21,12 +26,25 @@ module.exports = function(floor, dude){
 
     switch(obj.name){
       case 'Dude Bed':
-        dude.visible = true;
+        dude.visible = true; 
+        dude.active = true;       
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
         oldWater.visible = false;
         dude.visible = true;
+        break;
+      case 'Dude Stereo':
+        this.game.sounds.musicaDude.stop();
+        break;
+      case 'Dude Oven':
+        var food = this.scene.findOne('Dude Food');
+        food.visible = true;
+        food.active = true;
+        break;
+      case 'Dude Food':
+        obj.visible = false;
+        obj.active = false;
         break;
     }
   };

@@ -36,7 +36,7 @@ module.exports = {
     grandmaFood: {
       command: {
         state: { mind: 0.001, body: 0.1 },
-        duration: 1, // seconds
+        duration: 0.1, // seconds
         changeInterval: 1, // apply state every X seconds
       },
        nearness: 50
@@ -87,9 +87,9 @@ module.exports = {
 
     dudeOven: {
       command: {
-        state: { mind: -0.02, body: 0.05 },
+        state: { mind: -0.02, body: -0.001 },
         animation: 'dudeOvenOn',
-        duration: true, // seconds
+        duration: 6, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
@@ -104,6 +104,15 @@ module.exports = {
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
+    },
+
+    dudeFood: {
+      command: {
+        state: { mind: 0.001, body: 0.1 },        
+        duration: 0.1, // seconds
+        changeInterval: 1, // apply state every X seconds
+      },
+       nearness: 50
     }
 
   },
@@ -144,7 +153,7 @@ module.exports = {
       command: {
         state: { mind: 0.02, body: 0.05 },
         animation: 'familyKitchenOn',
-        duration: 10, // seconds
+        duration: 6, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
@@ -156,6 +165,15 @@ module.exports = {
         animation: 'familyShowerOn',
         duration: 1, // seconds
         changeInterval: 0.5, // apply state every X seconds
+      },
+      nearness: 50
+    },
+
+    familyFood: {
+      command: {
+        state: { mind: 0.001, body: 0.1 },        
+        duration: 0.1, // seconds
+        changeInterval: 1, // apply state every X seconds
       },
       nearness: 50
     }

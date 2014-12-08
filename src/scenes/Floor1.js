@@ -14,51 +14,40 @@ module.exports = function(floor, scene){
   var pos = grandMa.shape.getBounds().getFeet();
   grandMa.position = floorFeet.subtract(pos);
 
+  /*var wallDivision = new pac.Rectangle({
+    zIndex : 1000,
+    size: {
+      width: 5,
+      height: 183
+    },
+    fill: '#8b4513',
+    position: {
+      x: 247,
+      //x: 240,
+      y: 406
+    }
+  });
+
+  var wallDivision2 = new pac.Rectangle({
+    zIndex : 1000,
+    size: {
+      width: 5,
+      height: 50
+    },
+    fill: '#8b4513',
+    position: {
+      x: 242,
+      y: 406
+    }
+  });
+  scene.addObject(wallDivision);
+  scene.addObject(wallDivision2);*/
   scene.addObject(grandMa);
 
   var objects = require('./floor1Objects')(floor);
   objects.forEach(function(obj) {
     scene.addObject(new InteractiveObject(obj));
   });
-
-  /*var MenuObject = new prefabs.VerticalMenu({menuOptions: [{text: 'funciona'}, {text: 'bien'}],
-    position: new pac.Point(200, 30),
-    frame: 'idle1',
-    texture: 'some_object',
-    shape: new pac.Rectangle(),
-    actions: [ new actions.MenuCommander({
-      menuOptions: [{text: 'funciona'}, {text: 'bien'}],
-      position: floor.position.add(new pac.Point(200, 30)),
-      size: {
-        width: 100,
-        height: 100
-      },
-      floor: 2
-      })
-    ]
-  });*/
-
-
-  //scene.addObject(obj);
-
-
-    /*var MenuObject = new DummyObject({
-      name: 'GrandMa 2',
-      position: floor.position.add(new pac.Point(200, 30)),
-      frame: 'idle1',
-      texture: 'some_object',
-      actions: [ new actions.MenuCommander({
-        menuOptions: [{text: 'funciona'}, {text: 'bien'}],
-        position: floor.position.add(new pac.Point(200, 30)),
-        size: {
-          width: 100,
-          height: 100
-        },
-        })
-      ]
-    });
-  scene.addObject(MenuObject);*/
-
 
   require('./floor1Events')(floor, grandMa);
 };

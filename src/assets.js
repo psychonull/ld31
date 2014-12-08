@@ -94,6 +94,10 @@ var textures = {
     path: 'assets/img/dude/dude_oven.png',
     atlas: 'assets/img/dude/dude_oven.json'
   },
+  'dude_food': {
+    path: 'assets/img/dude/dude_food.png',
+    atlas: 'assets/img/dude/dude_food.json'
+  },
   'dude_shower': {
     path: 'assets/img/dude/dude_shower.png',
     atlas: 'assets/img/dude/dude_shower.json'
@@ -119,6 +123,10 @@ var textures = {
   'family_shower': {
     path: 'assets/img/family/family_shower.png',
     atlas: 'assets/img/family/family_shower.json'
+  },
+  'family_food': {
+    path: 'assets/img/family/family_food.png',
+    atlas: 'assets/img/family/family_food.json'
   }
 
 };

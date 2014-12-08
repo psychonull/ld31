@@ -11,3 +11,7 @@ _.forIn(sounds, function(files, key){
 });
 
 module.exports = result;
+
+
+//var Howler = require('howler').Howler;
+//Howler.volume(0.5)

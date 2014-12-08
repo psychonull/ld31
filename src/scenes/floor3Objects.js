@@ -90,6 +90,28 @@ actions: [new actions.Activable(activables.baby) ]
         autoplay: false
       }),
       actions: [ new actions.Activable(activables.familyShower) ]
+    },
+
+    {
+    name: 'Family Food',
+    position: floor.position.add(new pac.Point(500, 110)),
+    size: {
+      width: 34,
+      height: 19
+    },
+    frame: 'familyFood',
+    texture: 'family_food',
+
+    visible: false,
+    active: false,
+    floor: 3,
+    frameHover: 'familyFood_hover',
+    caption: ['Eat food'],
+
+    captionOffset: new pac.Point(-20, -20),    
+
+    actions: [ new actions.Activable(activables.familyFood) ]
     }
+
   ];
 };

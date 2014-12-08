@@ -1,4 +1,5 @@
 var CharacterCard = require('./prefabs/CharacterCard.js');
+var _ = pac._;
 
 module.exports = function(){
 
@@ -16,7 +17,13 @@ module.exports = function(){
       title: 'Family',
       content: 'They like to chill, thought order and homeworks come first.\n Lil guy is growing up and demanding tons of love.',
       footer: ''
-    }
+    },
+    mentalDisasterTextValue: _.sample([
+      'EXHAUSTED'
+    ]),
+    bodyProblemsTextValue: _.sample([
+      'EXHAUSTED'
+    ])
   });
   var dudeCard = new CharacterCard({
     frame: 'dude',
@@ -30,7 +37,13 @@ module.exports = function(){
       title: 'Richard McWeed',
       content: 'He is in a constant search of fun and the meaning of the life, withouth worrying too much.',
       footer: ''
-    }
+    },
+    mentalDisasterTextValue: _.sample([
+      'FRIED'
+    ]),
+    bodyProblemsTextValue: _.sample([
+      'UNHEALTHY'
+    ])
   });
   var granmaCard = new CharacterCard({
     frame: 'granma',
@@ -44,7 +57,13 @@ module.exports = function(){
       title: 'Granma Dorothy',
       content: 'She is an aged conservative girl who likes to keep things in perfect order. She is cool after all, but...',
       footer: ''
-    }
+    },
+    mentalDisasterTextValue: _.sample([
+      'INSANE'
+    ]),
+    bodyProblemsTextValue: _.sample([
+      'WRECKED'
+    ])
   });
 
   this.familyCard = familyCard;

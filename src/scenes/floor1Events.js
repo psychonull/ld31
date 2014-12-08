@@ -8,6 +8,9 @@ module.exports = function(floor, granMa){
       case 'Old Bed':
         granMa.visible = false;
         break;
+      case 'Old Shower':
+        granMa.visible = false;
+        break;
     }
   };
 
@@ -16,6 +19,9 @@ module.exports = function(floor, granMa){
 
     switch(obj.name){
       case 'Old Bed':
+        granMa.visible = true;
+        break;
+      case 'Old Shower':
         granMa.visible = true;
         break;
     }

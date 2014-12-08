@@ -1,0 +1,34 @@
+{
+  "frames": {
+    "water_on_0": {
+      "x": 0,
+      "y": 0,
+      "width": 180,
+      "height": 183
+    },
+    "water_on_1": {
+      "x": 180,
+      "y": 0,
+      "width": 180,
+      "height": 183
+    },
+    "water_on_2": {
+      "x": 360,
+      "y": 0,
+      "width": 180,
+      "height": 183
+    },
+    "water_on_3": {
+      "x": 540,
+      "y": 0,
+      "width": 180,
+      "height": 183
+    },
+      "water_on_4": {
+      "x": 720,
+      "y": 0,
+      "width": 180,
+      "height": 183
+    }
+  }
+}

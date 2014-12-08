@@ -42,7 +42,16 @@ module.exports = function(floor) {
         default: 'babyOff',
         autoplay: false
       }),
-      actions: [ new actions.Activable(activables.baby) ]
+actions: [new actions.Activable(activables.baby) ]
+      /*actions: [  new pac.actions.Delay(10),
+                  new pac.actions.Execute(function (dt, action) {
+                    var command = new actions.Command(activables.baby.command);
+                    this.actions.removeAll(actions.Command);
+                    this.actions.pushFront(command);
+                    return true;
+                  }),
+                  new actions.Activable(activables.babySleep) 
+               ]*/
     },
     {
       name: 'Family Kitchen',

@@ -3,6 +3,6 @@ module.exports = {
 
   tv: require('./tv'),
   bed: require('./bed'),
-  kitchen: require('./kitchen')
-
+  kitchen: require('./kitchen'),
+  grandmaShower: require('./grandmaShower')
 };

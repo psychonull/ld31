@@ -7,7 +7,7 @@ module.exports = {
         env: { granmaTV: 0.1 },
         state: { mind: 0.05, body: -0.01 },
         animation: 'tvOn',
-        duration: 30,
+        duration: 15,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -17,16 +17,16 @@ module.exports = {
       command: {
         state: { mind: 0.02, body: 0.05 },
         animation: 'bedOn',
-        duration: 30,
+        duration: 7,
         changeInterval: 0.5,
       },
       nearness: 50
     },
     kitchen: {
       command: {
-        state: { mind: 0.02, body: 0.05 },
+        state: { mind: 0.02, body: 0.02 },
         animation: 'kitchenOn',
-        duration: 20, // seconds
+        duration: 10, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50
@@ -50,7 +50,7 @@ module.exports = {
       command: {
         state: { mind: 0.02, body: 0.05 },
         animation: 'dudeBedOn',
-        duration: 60,
+        duration: 7,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -58,7 +58,7 @@ module.exports = {
 
     dudeOven: {
       command: {
-        state: { mind: 0.02, body: 0.05 },
+        state: { mind: -0.02, body: 0.05 },
         animation: 'dudeOvenOn',
         duration: true, // seconds
         changeInterval: 0.5, // apply state every X seconds
@@ -96,7 +96,7 @@ module.exports = {
       command: {
         state: { mind: 0.1, body: 0.05 },
         animation: 'familyBedOn',
-        duration: 30,
+        duration: 7,
         changeInterval: 0.5,
       },
       nearness: 50
@@ -106,7 +106,7 @@ module.exports = {
       command: {
         state: { mind: 0.02, body: 0.05 },
         animation: 'familyKitchenOn',
-        duration: true, // seconds
+        duration: 10, // seconds
         changeInterval: 0.5, // apply state every X seconds
       },
       nearness: 50

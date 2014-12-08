@@ -10,12 +10,7 @@ module.exports = function(floor, boy, girl){
         girl.visible = false;
         break;
       case 'Family Shower':
-        var random = Math.round(Math.random() * 10);
-        console.log(random);
-        if(random < 5)
           boy.visible = false;
-        else
-          girl.visible = false;
         break;
     }
   };
@@ -30,7 +25,6 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Family Shower':
         boy.visible = true;
-        girl.visible = true;
         break;
     }
   };

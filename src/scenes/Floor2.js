@@ -1,5 +1,7 @@
 
 var prefabs = require('../prefabs');
+var actions = require('../actions');
+var InteractiveObject = require('../prefabs/InteractiveObject.js');
 
 module.exports = function(floor, scene){
 
@@ -14,5 +16,10 @@ module.exports = function(floor, scene){
 
   scene.addObject(dude);
 
-  require('./floor2Events')(floor);
+  var objects = require('./floor2Objects')(floor);
+  objects.forEach(function(obj) {
+    scene.addObject(new InteractiveObject(obj));
+  });
+
+  require('./floor2Events')(floor, dude);
 };

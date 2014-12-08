@@ -8,11 +8,12 @@ module.exports = function(floor) {
   return [
     {
       name: 'Dude Bed',
-      position: floor.position.add(new pac.Point(273, 74)),
+      position: floor.position.add(new pac.Point(522, 34)),
       size: {
         width: 150,
         height: 150
       },
+      floor: 2,
       frame: 'dude_bed',
       texture: 'dude_bed',
 
@@ -21,7 +22,8 @@ module.exports = function(floor) {
       animations: new pac.AnimationList(animations.bed, {
         default: 'bedOff',
         autoplay: false
-      })
+      }),
+      actions: [ new actions.Activable(activables.bed) ]
     }
   ];
 };

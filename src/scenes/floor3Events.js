@@ -42,7 +42,7 @@ module.exports = function(floor, boy, girl){
         obj.actions.pushFront(
           new pac.actions.Execute(function (dt, action) {
                     var command = new actions.Command(activables.baby.command);
-                    
+
                     this.actions.pushFront(command);
                     return true;
                   })
@@ -61,4 +61,11 @@ module.exports = function(floor, boy, girl){
     }
   };
 
+  floor.onLostMind = function(){
+    console.log('granma lostMInd');
+  };
+
+  floor.onLostBody = function(){
+    console.log('granma lostBody');
+  };
 };

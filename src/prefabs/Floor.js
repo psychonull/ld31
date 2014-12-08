@@ -33,19 +33,29 @@ module.exports = function(stats, livingTime){
 
       switch(this.floor){
         case 1:
-          this.game.granmaCard.mind = this.stats.mind;
-          this.game.granmaCard.body = this.stats.body;
+          this.checkCharacterCard(this.game.granmaCard);
           break;
         case 2:
-          this.game.dudeCard.mind = this.stats.mind;
-          this.game.dudeCard.body = this.stats.body;
+          this.checkCharacterCard(this.game.dudeCard);
           break;
         case 3:
-          this.game.familyCard.mind = this.stats.mind;
-          this.game.familyCard.body = this.stats.body;
+          this.checkCharacterCard(this.game.familyCard);
           break;
       }
 
+    },
+
+    checkCharacterCard: function(card){
+      card.mind = this.stats.mind;
+      card.body = this.stats.body;
+      if(card.mentalDisaster && !this.lostMind){
+        this.onLostMind();
+        this.lostMind = true;
+      }
+      if(card.bodyProblems && !this.lostBody){
+        this.onLostBody();
+        this.lostBody = true;
+      }
     },
 
     disable: function(){

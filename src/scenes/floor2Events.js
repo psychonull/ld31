@@ -26,8 +26,8 @@ module.exports = function(floor, dude){
 
     switch(obj.name){
       case 'Dude Bed':
-        dude.visible = true; 
-        dude.active = true;       
+        dude.visible = true;
+        dude.active = true;
         break;
       case 'Dude Shower':
         var oldWater = this.scene.findOne('Old Water');
@@ -47,6 +47,14 @@ module.exports = function(floor, dude){
         obj.active = false;
         break;
     }
+  };
+
+  floor.onLostMind = function(){
+    console.log('granma lostMInd');
+  };
+
+  floor.onLostBody = function(){
+    console.log('granma lostBody');
   };
 
 };

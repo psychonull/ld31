@@ -1,39 +1,38 @@
 function v(mind, body){
-  return { mind: mind/1000, body: body/1000 };
+  var value = 0.0025;
+  return { mind: mind * value, body: body * value };
 }
 
 module.exports = {
   floor1: {
     start: { mind: 1, body: 1 },
-    living: v(-2, -5),
+    living: v(-1, -2),
 
-    env: {
-      familyTV: v(-1, 0),
+    env: {      
       babyCry: v(-2, 0),
-      dudeStereo: v(-10, -35),
-      dudeShower: v(-75, -75)
+      dudeStereo: v(-4, -2),
+      dudeShower: v(-3, -1)
     }
   },
   floor2: {
     start: { mind: 1, body: 1 },
-    living: v(-1, -5),
+    living: v(-2, -1),
 
     env: {
-      garnmaTV: v(-2, -1.5),
-      familyTV: v(-3, -1.5),
-      babyCry: v(-3, -1.5)
+      //garnmaTV: v(-2, -1.5),      
+      babyCry: v(-3, -1),
+      granmaBroom: v(-3, -1)
     }
   },
   floor3: {
     start: { mind: 1, body: 1 },
-    living: v(-1, -1),
+    living: v(-2, -1),
 
     env: {
-      garnmaTV: v(-1, -1),
-      dudeTV: v(-3, -3),
-      dudeStereo: v(-75, -75)
+      //garnmaTV: v(-1, -1),      
+      dudeStereo: v(-3, -1)
     }
   },
 
-  livingTime: 1 //seconds
+  livingTime: 0.5 //seconds
 };

@@ -42,10 +42,10 @@ module.exports = function(floor, granMa){
         break;
       case 'Old kitchen':
         var food = this.scene.findOne('Grandma Food');
-        food.visible = granMa.active = true;
+        food.visible = food.active = true;
         break;
       case 'Grandma Food':
-        obj.visible = granMa.active = false;
+        obj.visible = obj.active = false;
         break;
     }
   };

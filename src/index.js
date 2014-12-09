@@ -12,7 +12,10 @@ var ctn = window.document.getElementById('content');
 var gameSize = { width: 1067, height: 600 };
 
 var game = pac.create();
-var gameScale = ctn.clientHeight / gameSize.height;
+var gameScale = Math.min(
+    ctn.clientWidth / gameSize.width,
+    ctn.clientHeight / gameSize.height);
+
 
 game.stats = stats;
 

@@ -65,7 +65,7 @@ module.exports = function(stats, livingTime){
       this.walkers.each(function(w){ w.visible = false; });
       var rect = new pac.Rectangle({
         size: pac._.clone(floorSize),
-        position: this.position.clone(),
+        position: this.position.clone().subtract(0,1),
         layer: 'overlay',
         fill: '#000000',
         alpha: 0.7

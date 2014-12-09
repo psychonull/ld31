@@ -1,5 +1,6 @@
 function v(mind, body){
-  return { mind: mind/1000, body: body/1000 };
+  var value = 0.01;
+  return { mind: mind * value, body: body * value };
 }
 
 module.exports = {

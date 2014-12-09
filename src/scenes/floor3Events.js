@@ -1,4 +1,4 @@
-
+var _ = pac._;
 var actions = require('../actions');
 var activables = require('./activables').floor3;
 module.exports = function(floor, boy, girl){
@@ -13,8 +13,13 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
-        boy.visible = false;
+        floor.getWalker(obj.position).visible = false;
         dudeWater.visible = true;
+        break;
+      case 'Baby':
+        this.game.sounds.babyCrying.loop(true);
+        this.game.sounds.babyCrying.play();
+        this.game.sounds.babyCrying.volume(0.1);
         break;
     }
   };
@@ -29,11 +34,12 @@ module.exports = function(floor, boy, girl){
         break;
       case 'Family Shower':
         var dudeWater = this.scene.findOne('Dude Water');
-        boy.visible = true;
+        floor.getWalker(obj.position).visible = true;
         dudeWater.visible = false;
         break;
       case 'Baby':
         // Delay between 3 and 15 seconds
+        this.game.sounds.babyCrying.stop();
         var delay = Math.floor(Math.random() * 15) + 3;
 
         var activable;
@@ -83,4 +89,35 @@ module.exports = function(floor, boy, girl){
     }
   };
 
+  floor.onLostMind = function(){
+    var say = function(c, t, d, a){
+      return function(){
+        c.actions.pushBack(new pac.actions.Speak({
+          text: _.sample(t),
+          duration: d,
+          isBlocking: true,
+          minDuration: d,
+          after: a
+        }));
+      };
+    };
+
+    var isBoy = _.random(0,1);
+
+
+    say(isBoy ? boy : girl, ['We should break up.', 'I\'M DONE. I\'m leaving'], 2,
+      say(!isBoy ? boy : girl, ['ITS ALL YOUR FAULT', 'Let\'s do this for the kids'], 1.5,
+        say(isBoy ? boy : girl, ['yeah sure.'], 1, function(){
+          floor.walkers.remove(isBoy ? boy : girl);
+          floor.scene.removeObject(isBoy ? boy : girl);
+        })
+      )
+    )();
+
+
+  };
+
+  floor.onLostBody = function(){
+    console.log('granma lostBody');
+  };
 };

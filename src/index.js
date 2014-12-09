@@ -1,5 +1,6 @@
 var Loading = require('./Loading.js'),
-  scenes = require('./scenes');
+  scenes = require('./scenes'),
+  stats = require('./scenes/Stats');
 
 window.pac = require('../../pac/src/');
 
@@ -12,6 +13,8 @@ var gameSize = { width: 1067, height: 600 };
 
 var game = pac.create();
 var gameScale = ctn.clientHeight / gameSize.height;
+
+game.stats = stats;
 
 game.use('loader', pac.Loader, require('./assets.js'));
 

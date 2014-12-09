@@ -48,13 +48,13 @@ module.exports = function(){
   var granmaCard = new CharacterCard({
     frame: 'granma',
     avatarFrame: 'granma_pic',
-    caption: 'Granma Dorothy',
+    caption: 'Grandma Dorothy',
     position: {
       x: 932,
       y: 400
     },
     popup: {
-      title: 'Granma Dorothy',
+      title: 'Grandma Dorothy',
       content: 'She is an aged conservative girl who likes to keep things in perfect order. She is cool after all, but...',
       footer: ''
     },

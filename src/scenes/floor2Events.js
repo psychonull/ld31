@@ -16,7 +16,7 @@ module.exports = function(floor, dude){
         dude.visible = dude.active = false;
         break;
       case 'Dude Stereo':
-        this.game.sounds.musicaDude.loop(true);        
+        this.game.sounds.musicaDude.loop(true);
         this.game.sounds.musicaDude.play();
         this.game.sounds.musicaDude.volume(0.1);
         break;
@@ -78,7 +78,12 @@ module.exports = function(floor, dude){
   };
 
   floor.onLostBody = function(){
-    console.log('granma lostBody');
+    dude.actions.pushBack(new pac.actions.Speak({
+      text: _.sample(['Who cares about the body!?', 'This is very hard']),
+      duration: 1,
+      isBlocking: true,
+      minDuration: 1
+    }));
   };
 
 };

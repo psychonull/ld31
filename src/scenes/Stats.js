@@ -8,32 +8,30 @@ module.exports = {
     living: v(-1, -2),
 
     env: {      
-      familyTV: v(0, -1),
-      babyCry: v(-3, -1.5),
-      dudeStereo: v(-120, -35),
-      dudeShower: v(-75, -75)
+      babyCry: v(-2, 0),
+      dudeStereo: v(-4, -2),
+      dudeShower: v(-3, -1)
     }
   },
   floor2: {
     start: { mind: 1, body: 1 },
-    living: v(-3, -1),
+    living: v(-2, -1),
 
     env: {
-      garnmaTV: v(-2, -1.5),
-      familyTV: v(-3, -1.5),
-      babyCry: v(-3, -1.5)
+      //garnmaTV: v(-2, -1.5),      
+      babyCry: v(-3, -1),
+      granmaBroom: v(-3, -1)
     }
   },
   floor3: {
     start: { mind: 1, body: 1 },
-    living: v(-1.5, -1.5),
+    living: v(-2, -1),
 
     env: {
-      garnmaTV: v(-1, -1),
-      dudeTV: v(-3, -3),
-      dudeStereo: v(-75, -75)
+      //garnmaTV: v(-1, -1),      
+      dudeStereo: v(-3, -1)
     }
   },
 
-  livingTime: 1 //seconds
+  livingTime: 0.5 //seconds
 };

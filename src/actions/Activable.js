@@ -10,7 +10,7 @@ module.exports = pac.Action.extend({
   requires: [ pac.actions.Hoverable, pac.actions.Clickable ],
 
   init: function(options) {
-    this.nearness = (options && options.nearness) || 10;
+    this.nearness = (options && options.nearness) || 50;
     this.command = pac._.clone(options.command || {}, true);
   },
 

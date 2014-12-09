@@ -118,6 +118,29 @@ module.exports = function(floor, boy, girl){
   };
 
   floor.onLostBody = function(){
-    console.log('granma lostBody');
+    var say = function(c, t, d, a){
+      return function(){
+        c.actions.pushBack(new pac.actions.Speak({
+          text: _.sample(t),
+          duration: d,
+          isBlocking: true,
+          minDuration: d,
+          after: a
+        }));
+      };
+    };
+
+    say(girl, ['We are a complete disaster as parents.'], 2,
+      say(boy, ['Don\'t say that. This apartment is a complete disaster'], 2,
+        function(){
+          floor.actions.each(function(action){
+            if (action instanceof actions.Living){
+              action.lose.mind *= 5;
+            }
+          });
+        }
+      )
+    )();
+
   };
 };

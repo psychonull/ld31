@@ -76,7 +76,26 @@ module.exports = function(floor, granMa){
   };
 
   floor.onLostBody = function(){
-    console.log('granma lostBody');
+    
+    granMa.actions.pushBack(new pac.actions.Speak({
+      text: 'Ohhh my back!',
+      duration: 1,
+      isBlocking: true,
+      minDuration: 1
+    }));
+
+    floor.actions.each(function(action){
+      if (action instanceof actions.Living){
+        action.lose.mind *= 3;
+      }
+    });
+
+    granMa.actions.each(function(action){
+      if(action instanceof actions.Walker){
+        action.velocity *= 0.4;
+      }
+    });
+
   };
 
 };

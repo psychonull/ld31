@@ -8,19 +8,19 @@ function calc(comm, mind, body){
   var div = comm.duration === true ? 1 : comm.duration;
 
   comm.state = {
-    mind: ( value*mind ) / div, 
+    mind: ( value*mind ) / div,
     body: ( value*body ) / div
   };
 
   return comm;
 }
 
-var env = 0.001;
+var env = 1;
 
 module.exports = {
 
   floor1: {
-    tv: {      
+    tv: {
       command: calc({ env: { granmaTV: env }, animation: 'tvOn', duration: 15 }, 2, -2)
     },
 
@@ -71,11 +71,11 @@ module.exports = {
   floor3: {
 
     baby: {
-      command: calc({ env: { babyCry: env }, animation: 'babyOn', duration: true }, -1, -2)
+      command: calc({ env: { babyCry: 0.8 }, animation: 'babyOn', duration: true }, -1, -2)
     },
 
     babySleep: {
-      command: calc({ animation: 'babyoff', duration: true }, 0, 0)      
+      command: calc({ animation: 'babyoff', duration: true }, 0, 0)
     },
 
     bedFamily: {

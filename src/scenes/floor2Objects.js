@@ -18,6 +18,8 @@ module.exports = function(floor) {
       frame: 'dude_bed',
       texture: 'dude_bed',
 
+      caption: ['Take a nap', 'Wake up'],
+
       frameHover: 'dude_bed_hover',
       captionOffset: new pac.Point(20, 25),
 
@@ -37,9 +39,10 @@ module.exports = function(floor) {
       floor: 2,
       frame: 'dude_stereo',
       texture: 'dude_stereo',
-
       frameHover: 'dude_stereo_hover',
       captionOffset: new pac.Point(15, 25),
+
+      caption: ['Play some tunes', 'Stop playing'],
 
       animations: new pac.AnimationList(animations.dudeStereo, {
         default: 'dudeStereoOff',
@@ -57,6 +60,8 @@ module.exports = function(floor) {
       floor: 2,
       frame: 'dude_oven',
       texture: 'dude_oven',
+
+      caption: ['Cook something', ''],
 
       frameHover: 'dude_oven_hover',
       captionOffset: new pac.Point(0, 20),
@@ -77,6 +82,8 @@ module.exports = function(floor) {
       floor: 2,
       frame: 'dude_shower',
       texture: 'dude_shower',
+
+      caption: ['Take a shower', ''],
 
       frameHover: 'dude_shower_hover',
 

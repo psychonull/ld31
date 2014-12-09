@@ -17,6 +17,8 @@ module.exports = function(floor) {
       frame: 'family_bed',
       texture: 'family_bed',
 
+      caption: ['Sleep time', 'Wake up'],
+
       frameHover: 'family_bed_hover',
 
       animations: new pac.AnimationList(animations.bedFamily, {
@@ -35,6 +37,8 @@ module.exports = function(floor) {
       floor: 3,
       frame: 'baby',
       texture: 'baby',
+
+      caption: ['', 'Sleep, baby'],
 
       frameHover: 'baby_hover',
 
@@ -72,6 +76,8 @@ module.exports = function(floor) {
       frame: 'family_kitchen',
       texture: 'family_kitchen',
 
+      caption: ['Cook', ''],
+
       frameHover: 'family_kitchen_hover',
 
       animations: new pac.AnimationList(animations.familyKitchen, {
@@ -90,6 +96,8 @@ module.exports = function(floor) {
       floor: 3,
       frame: 'family_shower',
       texture: 'family_shower',
+
+      caption: ['Take a shower', ''],
 
       frameHover: 'family_shower_hover',
 

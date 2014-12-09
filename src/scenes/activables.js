@@ -4,11 +4,12 @@ function calc(comm, mind, body){
 
   comm.changeInterval = stats.livingTime;
 
-  var value = 0.01;
+  var value = 0.005;
+  var div = comm.duration === true ? 1 : comm.duration;
 
   comm.state = {
-    mind: value*mind, 
-    body: value*body
+    mind: ( value*mind ) / div, 
+    body: ( value*body ) / div
   };
 
   return comm;
@@ -46,7 +47,7 @@ module.exports = {
 
   floor2: {
     dudeStereo: {
-      command: calc({ env: { dudeStereo: env }, animation: 'dudeStereoOn', duration: true }, 3, -1)
+      command: calc({ env: { dudeStereo: env }, animation: 'dudeStereoOn', duration: true }, 1.3, -0.1)
     },
 
     bedDude: {
@@ -58,7 +59,7 @@ module.exports = {
     },
 
     dudeShower: {
-      command: calc({ env: { dudeShower: env }, animation: 'dudeShowerOn', duration: 15 }, 0, 1)
+      command: calc({ env: { dudeShower: env }, animation: 'dudeShowerOn', duration: 15 }, 0, 0.1)
     },
 
     dudeFood: {
@@ -86,7 +87,7 @@ module.exports = {
     },
 
     familyShower: {
-      command: calc({ env: { dudeShower: env }, animation: 'familyShowerOn', duration: 1 }, 1, 2)
+      command: calc({ env: { dudeShower: env }, animation: 'familyShowerOn', duration: 10 }, 1, 2)
     },
 
     familyFood: {

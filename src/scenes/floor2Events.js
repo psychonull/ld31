@@ -43,7 +43,7 @@ module.exports = function(floor, dude){
         food.visible = food.active = true;
         break;
       case 'Dude Food':
-        obj.active = obj.visible = dude.active = false;
+        obj.active = obj.visible = false;
         break;
     }
   };

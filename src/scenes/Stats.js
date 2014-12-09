@@ -1,5 +1,5 @@
 function v(mind, body){
-  var value = 0.01;
+  var value = 0.0025;
   return { mind: mind * value, body: body * value };
 }
 

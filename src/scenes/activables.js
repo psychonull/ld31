@@ -51,7 +51,7 @@ module.exports = {
     },
 
     bedDude: {
-      command: calc({ animation: 'dudeBedOn', duration: 7 }, 2, 2)
+      command: calc({ animation: 'dudeBedOn', duration: 7 }, 6, 6)
     },
 
     dudeOven: {
@@ -79,7 +79,7 @@ module.exports = {
     },
 
     bedFamily: {
-      command: calc({ animation: 'familyBedOn', duration: 7 }, 2, 2)
+      command: calc({ animation: 'familyBedOn', duration: 7 }, 6, 6)
     },
 
     familyKitchen: {
@@ -87,11 +87,11 @@ module.exports = {
     },
 
     familyShower: {
-      command: calc({ env: { dudeShower: env }, animation: 'familyShowerOn', duration: 10 }, 1, 2)
+      command: calc({ env: { dudeShower: env }, animation: 'familyShowerOn', duration: 10 }, 2, 3)
     },
 
     familyFood: {
-      command: calc({ duration: 0.1 }, 1, 3)
+      command: calc({ duration: 0.1 }, 2, 3)
     }
 
   }
